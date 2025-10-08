@@ -7,13 +7,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:laza_eshop/laza_eshop.dart';
 
 import 'package:laza_eshop/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const LazaEshop());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
