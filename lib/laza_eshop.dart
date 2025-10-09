@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:laza_eshop/core/routes/app_router.dart';
 
 class LazaEshop extends StatelessWidget {
   const LazaEshop({super.key});
@@ -7,17 +8,7 @@ class LazaEshop extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Laza Eshop',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Laza Eshop Home Page'),
-        ),
-        body: Center(
-          child: Text('Welcome to Laza Eshop!'),
-        ),
-      ),
+      onGenerateRoute: AppRouter().onGenerateRoute,
     );
   }
 }
