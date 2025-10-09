@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:laza_eshop/core/routes/router_transitions.dart';
+
+import 'router_transitions.dart';
 
 class AppRouter {
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {

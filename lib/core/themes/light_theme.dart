@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:laza_eshop/core/themes/app_colors.dart';
+
+import 'app_colors.dart';
 
 ThemeData lightTheme = ThemeData(
   fontFamily: 'Inter',
@@ -17,35 +18,6 @@ ThemeData lightTheme = ThemeData(
     ),
   ),
   hintColor: AppColors.gray,
-  textTheme: const TextTheme(
-    headlineMedium: TextStyle(
-      color: AppColors.black,
-    ),
-    headlineSmall: TextStyle(
-      color: AppColors.black,
-    ),
-    titleLarge: TextStyle(
-      color: AppColors.black,
-    ),
-    titleMedium: TextStyle(
-      color: AppColors.black,
-    ),
-    titleSmall: TextStyle(
-      color: AppColors.black,
-    ),
-    bodyMedium: TextStyle(
-      color: AppColors.gray,
-    ),
-    bodySmall: TextStyle(
-      color: AppColors.gray,
-    ),
-    labelMedium: TextStyle(
-      color: AppColors.black,
-    ),
-    labelSmall: TextStyle(
-      color: AppColors.black,
-    ),
-  ),
   colorScheme: const ColorScheme.light(
     primary: AppColors.mainLight,
     secondary: AppColors.purple,
