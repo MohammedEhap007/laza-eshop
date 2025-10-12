@@ -1,8 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'app_colors.dart';
-
 class AppTextStyles {
   static TextStyle font11Regular = TextStyle(
     fontSize: 11.sp,
