@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/helpers/cache_helper_checks.dart';
 import 'core/routes/app_router.dart';
+import 'core/routes/routes.dart';
 import 'core/themes/dark_theme.dart';
 import 'core/themes/light_theme.dart';
 
@@ -18,6 +20,9 @@ class LazaEshop extends StatelessWidget {
         theme: lightTheme,
         darkTheme: darkTheme,
         onGenerateRoute: AppRouter().onGenerateRoute,
+        initialRoute: isOnboardingSeen
+            ? Routes.loginScreen
+            : Routes.onBoardingScreen,
         debugShowCheckedModeBanner: false,
       ),
     );
