@@ -14,11 +14,11 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 55.h,
+      height: 50.h,
       child: TextButton(
         style: TextButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24.r),
+            borderRadius: BorderRadius.circular(28.r),
           ),
           backgroundColor: AppColors.purple,
         ),

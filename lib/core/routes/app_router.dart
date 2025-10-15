@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../features/auth/screens/login_screen.dart';
+import '../../features/auth/screens/signup_screen.dart';
 import '../../features/onboarding/screens/onboarding_screen.dart';
 
 import 'router_transitions.dart';
@@ -19,6 +20,10 @@ class AppRouter {
       case Routes.loginScreen:
         return RouterTransitions.navigateHorizontal(
           const LoginScreen(),
+        );
+      case Routes.signUpScreen:
+        return RouterTransitions.navigateHorizontal(
+          const SignupScreen(),
         );
       default:
         return RouterTransitions.navigate(

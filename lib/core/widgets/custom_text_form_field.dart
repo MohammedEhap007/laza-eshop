@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:laza_eshop/core/themes/app_text_styles.dart';
-import 'package:laza_eshop/core/utils/extensions.dart';
 
+import '../themes/app_text_styles.dart';
+import '../utils/extensions.dart';
 import '../themes/app_colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -16,6 +16,7 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final Color? backgroundColor;
   final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
   final TextEditingController? controller;
   final Function(String?) validator;
   const CustomTextFormField({
@@ -30,6 +31,7 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.backgroundColor,
     this.keyboardType,
+    this.textInputAction,
     this.controller,
     required this.validator,
   });
@@ -38,6 +40,10 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      onTapOutside: (event) {
+        FocusScope.of(context).unfocus();
+      },
+      textInputAction: textInputAction,
       decoration: InputDecoration(
         isDense: true,
         contentPadding:
@@ -90,6 +96,7 @@ class CustomTextFormField extends StatelessWidget {
         filled: true,
       ),
       obscureText: isObscureText ?? false,
+      obscuringCharacter: '*',
       style: AppTextStyles.font14Medium.copyWith(
         color: context.isDarkMode() ? AppColors.white : AppColors.black,
       ),

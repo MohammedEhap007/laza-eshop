@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/widgets/custom_text_button.dart';
-import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../core/helpers/spacing.dart';
-import '../../../../core/themes/app_text_styles.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/widgets/custom_blur_text.dart';
-import '../../../../core/themes/app_colors.dart';
+import '../../../../core/widgets/custom_text_button.dart';
+import '../../../../core/widgets/custom_text_form_field.dart';
 
-import 'dont_have_an_account_text.dart';
+import 'terms_and_conditions_text.dart';
 
-class LoginScreenBody extends StatelessWidget {
-  const LoginScreenBody({super.key});
+class SignupScreenBody extends StatelessWidget {
+  const SignupScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +19,18 @@ class LoginScreenBody extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
-            verticalSpace(60),
-            const CustomBlurText(text: 'Welcome'),
-            verticalSpace(5),
-            Text(
-              'Please enter your data to continue',
-              style: AppTextStyles.font14Regular.copyWith(
-                color: AppColors.gray,
-              ),
+            const CustomAppBar(),
+            const CustomBlurText(text: 'Sign Up'),
+            verticalSpace(155),
+            CustomTextFormField(
+              hintText: 'Username',
+              keyboardType: TextInputType.name,
+              textInputAction: TextInputAction.next,
+              validator: (value) {
+                return null;
+              },
             ),
-            verticalSpace(165),
+            verticalSpace(20),
             CustomTextFormField(
               hintText: 'Email Address',
               keyboardType: TextInputType.emailAddress,
@@ -50,21 +49,11 @@ class LoginScreenBody extends StatelessWidget {
                 return null;
               },
             ),
-            verticalSpace(30),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                'Forgot Password?',
-                style: AppTextStyles.font14Regular.copyWith(
-                  color: AppColors.lightRed,
-                ),
-              ),
-            ),
-            verticalSpace(145),
-            const DontHaveAnAccountText(),
+            verticalSpace(165),
+            const TermsAndConditionsText(),
             verticalSpace(25),
             CustomTextButton(
-              text: 'Login',
+              text: 'Sign Up',
               onPressed: () {},
             ),
             verticalSpace(15),
