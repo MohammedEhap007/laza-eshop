@@ -31,14 +31,35 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+
+  # Generating native splash screen
   flutter_native_splash: ^2.4.6
+  # Responsive design
   flutter_screenutil: ^5.9.3
-  flutter_secure_storage: ^9.2.4
+  # SVG support
   flutter_svg: ^2.2.1
+  # Key-value storage
   shared_preferences: ^2.5.3
+  flutter_secure_storage: ^9.2.4
+  # State management
+  flutter_bloc: ^9.1.1
+  # JSON annotation support for data models
+  json_annotation: ^4.9.0
+  # HTTP client and networking
+  dio: ^5.9.0
+  # Logging interceptor for Dio
+  pretty_dio_logger: ^1.4.0
+  # Retrofit for API calls
+  retrofit: ^4.8.0
+  # Code generation tool Mainly used for Cubits and Retrofit
+  freezed: ^3.2.3
+  # Annotation support for the Freezed package
+  freezed_annotation: ^3.1.0
+
+
+
 
 dev_dependencies:
-  flutter_launcher_icons: ^0.14.4
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -47,6 +68,16 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
+
+  # Generating app launcher icons
+  flutter_launcher_icons: ^0.14.4
+  # Code generation tool
+  build_runner: ^2.10.1
+  # JSON serialization code generator
+  json_serializable: ^6.11.1
+  # Retrofit code generator
+  retrofit_generator: ^10.0.6
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

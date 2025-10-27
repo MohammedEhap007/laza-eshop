@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import '../themes/app_assets.dart';
 import '../themes/app_colors.dart';
 import '../themes/app_text_styles.dart';
-import '../utils/extensions.dart';
+import '../utils/app_extensions.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key, this.title});

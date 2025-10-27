@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/themes/app_assets.dart';
 import '../../../../core/themes/app_colors.dart';
-import '../../../../core/utils/extensions.dart';
+import '../../../../core/utils/app_extensions.dart';
 import 'onboarding_box.dart';
 
 class OnboardingScreenBody extends StatelessWidget {
