@@ -51,8 +51,6 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   # Retrofit for API calls
   retrofit: ^4.8.0
-  # Code generation tool Mainly used for Cubits and Retrofit
-  freezed: ^3.2.3
   # Annotation support for the Freezed package
   freezed_annotation: ^3.1.0
 
@@ -77,6 +75,8 @@ dev_dependencies:
   json_serializable: ^6.11.1
   # Retrofit code generator
   retrofit_generator: ^10.0.6
+  # Code generation tool Mainly used for Cubits and Retrofit
+  freezed: ^3.2.3
   
 
 # For information on the generic Dart part of this file, see the
