@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../features/auth/screens/login_screen.dart';
-import '../../features/auth/screens/signup_screen.dart';
-import '../../features/onboarding/screens/onboarding_screen.dart';
+import '../../features/auth/ui/screens/login_screen.dart';
+import '../../features/auth/ui/screens/signup_screen.dart';
+import '../../features/onboarding/ui/screens/onboarding_screen.dart';
 
 import 'router_transitions.dart';
 import 'routes.dart';

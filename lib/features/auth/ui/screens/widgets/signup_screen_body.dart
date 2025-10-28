@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/helpers/spacing.dart';
-import '../../../../core/widgets/custom_app_bar.dart';
-import '../../../../core/widgets/custom_blur_text.dart';
-import '../../../../core/widgets/custom_text_button.dart';
-import '../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../../core/helpers/spacing.dart';
+import '../../../../../core/widgets/custom_app_bar.dart';
+import '../../../../../core/widgets/custom_blur_text.dart';
+import '../../../../../core/widgets/custom_text_button.dart';
+import '../../../../../core/widgets/custom_text_form_field.dart';
 
 import 'terms_and_conditions_text.dart';
 

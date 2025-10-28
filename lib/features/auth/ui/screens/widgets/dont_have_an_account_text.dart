@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/routes/routes.dart';
-import '../../../../core/themes/app_colors.dart';
-import '../../../../core/themes/app_text_styles.dart';
-import '../../../../core/utils/app_extensions.dart';
+import '../../../../../core/routes/routes.dart';
+import '../../../../../core/themes/app_colors.dart';
+import '../../../../../core/themes/app_text_styles.dart';
+import '../../../../../core/utils/app_extensions.dart';
 
 class DontHaveAnAccountText extends StatelessWidget {
   const DontHaveAnAccountText({super.key});
