@@ -6,3 +6,9 @@ bool isOnboardingSeen =
       key: CacheHelperKeys.onboarding,
     ) ??
     false;
+
+bool isLoggedIn =
+    CacheHelper.getBool(
+      key: CacheHelperKeys.login,
+    ) ??
+    false;

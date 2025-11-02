@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/themes/app_assets.dart';
-import '../../../core/themes/app_colors.dart';
-import '../../../core/utils/extensions.dart';
-
+import '../../../../core/themes/app_colors.dart';
+import '../../../../core/utils/app_extensions.dart';
 import 'widgets/onboarding_screen_body.dart';
 
 class OnboardingScreen extends StatelessWidget {

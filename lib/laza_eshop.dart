@@ -21,7 +21,9 @@ class LazaEshop extends StatelessWidget {
         darkTheme: darkTheme,
         onGenerateRoute: AppRouter().onGenerateRoute,
         initialRoute: isOnboardingSeen
-            ? Routes.loginScreen
+            ? isLoggedIn
+                  ? Routes.homeScreen
+                  : Routes.loginScreen
             : Routes.onBoardingScreen,
         debugShowCheckedModeBanner: false,
       ),
