@@ -11,7 +11,9 @@ class CustomTextFormField extends StatelessWidget {
   final InputBorder? enabledBorder;
   final TextStyle? inputTextStyle;
   final TextStyle? hintStyle;
-  final String hintText;
+  final TextStyle? labelStyle;
+  final String? hintText;
+  final String? labelText;
   final bool? isObscureText;
   final Widget? suffixIcon;
   final Color? backgroundColor;
@@ -25,8 +27,10 @@ class CustomTextFormField extends StatelessWidget {
     this.focusedBorder,
     this.enabledBorder,
     this.inputTextStyle,
+    this.hintText,
     this.hintStyle,
-    required this.hintText,
+    this.labelText,
+    this.labelStyle,
     this.isObscureText,
     this.suffixIcon,
     this.backgroundColor,
@@ -56,7 +60,7 @@ class CustomTextFormField extends StatelessWidget {
                 color: Color(0xFFE7E8EA),
                 width: 1.3,
               ),
-              borderRadius: BorderRadius.circular(16.0),
+              borderRadius: BorderRadius.circular(24.0),
             ),
         enabledBorder:
             enabledBorder ??
@@ -79,14 +83,20 @@ class CustomTextFormField extends StatelessWidget {
             color: AppColors.red,
             width: 1.3,
           ),
-          borderRadius: BorderRadius.circular(16.0),
+          borderRadius: BorderRadius.circular(24.0),
         ),
         labelStyle:
             hintStyle ??
             AppTextStyles.font12Regular.copyWith(
               color: AppColors.gray,
             ),
-        labelText: hintText,
+        hintStyle:
+            hintStyle ??
+            AppTextStyles.font12Regular.copyWith(
+              color: AppColors.gray,
+            ),
+        hintText: hintText,
+        labelText: labelText,
         suffixIcon: suffixIcon,
         fillColor:
             backgroundColor ??

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:laza_eshop/core/widgets/custom_app_error_dialog.dart';
+import 'package:laza_eshop/features/auth/ui/screens/widgets/email_and_password_form.dart';
 
 import '../../../../../core/apis/api_error_model.dart';
 import '../../../../../core/widgets/custom_text_button.dart';
@@ -34,24 +35,7 @@ class LoginScreenBody extends StatelessWidget {
               ),
             ),
             verticalSpace(165),
-            CustomTextFormField(
-              hintText: 'Email Address',
-              keyboardType: TextInputType.emailAddress,
-              textInputAction: TextInputAction.next,
-              validator: (value) {
-                return null;
-              },
-            ),
-            verticalSpace(20),
-            CustomTextFormField(
-              hintText: 'Password',
-              keyboardType: TextInputType.visiblePassword,
-              textInputAction: TextInputAction.done,
-              isObscureText: true,
-              validator: (value) {
-                return null;
-              },
-            ),
+            const EmailAndPasswordForm(),
             verticalSpace(30),
             Align(
               alignment: Alignment.centerRight,
