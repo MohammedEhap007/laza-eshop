@@ -28,49 +28,42 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
-
-  # Generating native splash screen
-  flutter_native_splash: ^2.4.6
-  # Responsive design
-  flutter_screenutil: ^5.9.3
-  # SVG support
-  flutter_svg: ^2.2.1
-  # Key-value storage
-  shared_preferences: ^2.5.3
-  flutter_secure_storage: ^9.2.4
-  # State management
-  flutter_bloc: ^9.1.1
-  # JSON annotation support for data models
-  json_annotation: ^4.9.0
-  # HTTP client and networking
+  cupertino_icons: ^1.0.8
+  # HTTP Client For API Calls
   dio: ^5.9.0
-  # Logging interceptor for Dio
-  pretty_dio_logger: ^1.4.0
-  # Retrofit for API calls
-  retrofit: ^4.8.0
-  # Annotation support for the Freezed package
+  # State Management Library
+  flutter_bloc: ^9.1.1
+  # Native Splash Screen Generator
+  flutter_native_splash: ^2.4.6
+  # Responsive UI Library
+  flutter_screenutil: ^5.9.3
+  # Secure Storage Library for storing sensitive data
+  flutter_secure_storage: ^9.2.4
+  # SVG Rendering Library
+  flutter_svg: ^2.2.1
+  # Code generation annotations for the Freezed package
   freezed_annotation: ^3.1.0
-
-
-
+  # Dependency Injection Library
+  get_it: ^8.2.0
+  # JSON serialization annotations for Retrofit and other libraries
+  json_annotation: ^4.9.0
+  # Logging Interceptor for Dio HTTP client
+  pretty_dio_logger: ^1.4.0
+  # Retrofit HTTP client generator
+  retrofit: ^4.8.0
+  # Key-Value Storage Library for simple data persistence
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
-
-  # Generating app launcher icons
-  flutter_launcher_icons: ^0.14.4
+  flutter_lints: ^5.0.0
   # Code generation tool
   build_runner: ^2.10.1
+  # Generating app launcher icons
+  flutter_launcher_icons: ^0.14.4
   # JSON serialization code generator
   json_serializable: ^6.11.1
   # Retrofit code generator
