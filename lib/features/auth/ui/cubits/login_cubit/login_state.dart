@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../../core/apis/api_error_model.dart';
+import '../../../data/models/login_response.dart';
 
 part 'login_state.freezed.dart';
 
@@ -8,8 +9,8 @@ part 'login_state.freezed.dart';
 class LoginState<T> with _$LoginState<T> {
   const factory LoginState.initial() = _Initial;
 
-  const factory LoginState.loginLoading() = _LoginLoading;
-  const factory LoginState.loginSuccess(T data) = _LoginSuccess<T>;
+  const factory LoginState.loginLoading() = LoginLoading;
+  const factory LoginState.loginSuccess(LoginResponse data) = LoginSuccess<T>;
   const factory LoginState.loginFailure(ApiErrorModel apiErrorModel) =
-      _LoginFailure<T>;
+      LoginFailure<T>;
 }

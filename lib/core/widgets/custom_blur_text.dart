@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../utils/app_extensions.dart';
 
 import '../themes/app_colors.dart';
 import '../themes/app_text_styles.dart';
+import '../utils/app_extensions.dart';
 
 class CustomBlurText extends StatelessWidget {
   const CustomBlurText({super.key, required this.text});

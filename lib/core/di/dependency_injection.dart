@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:laza_eshop/features/auth/data/services/auth_service.dart';
 
+import '../../features/auth/data/services/auth_service.dart';
 import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/ui/cubits/login_cubit/login_cubit.dart';
 import '../apis/dio_factory.dart';

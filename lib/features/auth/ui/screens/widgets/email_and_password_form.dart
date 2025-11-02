@@ -6,7 +6,15 @@ import '../../../../../core/utils/app_regex.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 
 class EmailAndPasswordForm extends StatefulWidget {
-  const EmailAndPasswordForm({super.key});
+  const EmailAndPasswordForm({
+    super.key,
+    required this.formKey,
+    required this.emailController,
+    required this.passwordController,
+  });
+  final GlobalKey<FormState> formKey;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
 
   @override
   State<EmailAndPasswordForm> createState() => _EmailAndPasswordFormState();
@@ -14,38 +22,39 @@ class EmailAndPasswordForm extends StatefulWidget {
 
 class _EmailAndPasswordFormState extends State<EmailAndPasswordForm> {
   bool isObscureText = true;
-  late GlobalKey<FormState> formKey;
-  late TextEditingController emailController;
-  late TextEditingController passwordController;
-
-  @override
-  void initState() {
-    super.initState();
-    formKey = GlobalKey<FormState>();
-    emailController = TextEditingController();
-    passwordController = TextEditingController();
-  }
+  bool hasEmailInteracted = false;
+  bool hasPasswordInteracted = false;
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: formKey,
+      key: widget.formKey,
       child: Column(
         children: [
           CustomTextFormField(
             labelText: 'Email Address',
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
-            controller: emailController,
+            controller: widget.emailController,
+            autovalidateMode: hasEmailInteracted
+                ? AutovalidateMode.onUserInteraction
+                : AutovalidateMode.disabled,
+            onChanged: (value) {
+              if (!hasEmailInteracted) {
+                setState(() {
+                  hasEmailInteracted = true;
+                });
+              }
+            },
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isEmailValid(value)) {
                 return 'Please enter a valid email';
               }
+              return null;
             },
           ),
-
           verticalSpace(20),
           CustomTextFormField(
             labelText: 'Password',
@@ -64,13 +73,24 @@ class _EmailAndPasswordFormState extends State<EmailAndPasswordForm> {
               ),
             ),
             isObscureText: isObscureText,
-            controller: passwordController,
+            controller: widget.passwordController,
+            autovalidateMode: hasPasswordInteracted
+                ? AutovalidateMode.onUserInteraction
+                : AutovalidateMode.disabled,
+            onChanged: (value) {
+              if (!hasPasswordInteracted) {
+                setState(() {
+                  hasPasswordInteracted = true;
+                });
+              }
+            },
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isPasswordValid(value)) {
                 return 'Please enter a valid password';
               }
+              return null;
             },
           ),
         ],

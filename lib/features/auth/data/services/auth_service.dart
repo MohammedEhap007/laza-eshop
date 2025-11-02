@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:laza_eshop/core/apis/api_constants.dart';
-import 'package:laza_eshop/features/auth/data/models/login_request_body.dart';
-import 'package:laza_eshop/features/auth/data/models/login_response.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
+
+import '../../../../core/apis/api_constants.dart';
+import '../models/login_request_body.dart';
+import '../models/login_response.dart';
 
 part 'auth_service.g.dart';
 

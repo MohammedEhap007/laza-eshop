@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../themes/app_colors.dart';
 import '../themes/app_text_styles.dart';
 import '../utils/app_extensions.dart';
-import '../themes/app_colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
@@ -20,7 +20,10 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
   final TextEditingController? controller;
+  final void Function(String)? onChanged;
   final Function(String?) validator;
+  final AutovalidateMode? autovalidateMode;
+
   const CustomTextFormField({
     super.key,
     this.contentPadding,
@@ -37,6 +40,8 @@ class CustomTextFormField extends StatelessWidget {
     this.keyboardType,
     this.textInputAction,
     this.controller,
+    this.onChanged,
+    this.autovalidateMode,
     required this.validator,
   });
 
@@ -44,6 +49,8 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      onChanged: onChanged,
+      autovalidateMode: autovalidateMode,
       onTapOutside: (event) {
         FocusScope.of(context).unfocus();
       },

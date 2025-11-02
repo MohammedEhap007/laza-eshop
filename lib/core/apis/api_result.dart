@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:laza_eshop/core/apis/api_error_handler.dart';
 
 import 'api_error_model.dart';
 

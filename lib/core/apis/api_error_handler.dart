@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:laza_eshop/core/utils/app_extensions.dart';
+
+import '../utils/app_extensions.dart';
 
 import 'api_error_model.dart';
 
@@ -49,7 +50,7 @@ class ApiErrorHandler {
             if (allErrors != null) {
               allErrors.forEach((key, value) {
                 for (var error in (value as List)) {
-                  final String singleErrorMessage = "$key: $error";
+                  final String singleErrorMessage = "$error";
                   errorsList.add(singleErrorMessage);
                 }
               });
