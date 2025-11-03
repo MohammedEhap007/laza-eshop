@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/auth/ui/cubits/login_cubit/login_cubit.dart';
 import '../../features/auth/ui/screens/login_screen.dart';
-import '../../features/auth/ui/screens/signup_screen.dart';
+import '../../features/auth/ui/screens/sign_up_screen.dart';
 import '../../features/auth/ui/screens/verification_code_screen.dart';
 import '../../features/home/ui/screens/home_screen.dart';
 import '../../features/onboarding/ui/screens/onboarding_screen.dart';

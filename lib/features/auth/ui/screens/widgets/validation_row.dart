@@ -25,17 +25,21 @@ class ValidationRow extends StatelessWidget {
         ),
         horizontalSpace(6),
         Expanded(
-          child: Text(
-            text,
+          child: AnimatedDefaultTextStyle(
+            duration: const Duration(milliseconds: 350),
+            curve: Curves.easeInOut,
             style: AppTextStyles.font12Regular.copyWith(
               decoration: hasValidated ? TextDecoration.lineThrough : null,
               decorationColor: AppColors.purple,
-              decorationThickness: 2.0,
+              decorationThickness: 2.5,
               color: hasValidated
                   ? AppColors.gray
                   : context.isDarkMode()
                   ? AppColors.white
                   : AppColors.black,
+            ),
+            child: Text(
+              text,
             ),
           ),
         ),

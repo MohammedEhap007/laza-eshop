@@ -4,26 +4,53 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/utils/app_regex.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
+import 'password_validations_text.dart';
 
-class EmailAndPasswordForm extends StatefulWidget {
-  const EmailAndPasswordForm({
+class SignUpForm extends StatefulWidget {
+  const SignUpForm({
     super.key,
     required this.formKey,
+    required this.usernameController,
     required this.emailController,
     required this.passwordController,
   });
+
   final GlobalKey<FormState> formKey;
+  final TextEditingController usernameController;
   final TextEditingController emailController;
   final TextEditingController passwordController;
 
   @override
-  State<EmailAndPasswordForm> createState() => _EmailAndPasswordFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
-class _EmailAndPasswordFormState extends State<EmailAndPasswordForm> {
+class _SignUpFormState extends State<SignUpForm> {
   bool isObscureText = true;
-  bool hasEmailInteracted = false;
-  bool hasPasswordInteracted = false;
+  bool hasLowercase = false;
+  bool hasUppercase = false;
+  bool hasSpecialCharacters = false;
+  bool hasNumber = false;
+  bool hasMinLength = false;
+
+  @override
+  void initState() {
+    setupPasswordValidationListener();
+    super.initState();
+  }
+
+  void setupPasswordValidationListener() {
+    widget.passwordController.addListener(() {
+      setState(() {
+        hasLowercase = AppRegex.hasLowerCase(widget.passwordController.text);
+        hasUppercase = AppRegex.hasUpperCase(widget.passwordController.text);
+        hasSpecialCharacters = AppRegex.hasSpecialCharacter(
+          widget.passwordController.text,
+        );
+        hasNumber = AppRegex.hasNumber(widget.passwordController.text);
+        hasMinLength = AppRegex.hasMinLength(widget.passwordController.text);
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,20 +59,22 @@ class _EmailAndPasswordFormState extends State<EmailAndPasswordForm> {
       child: Column(
         children: [
           CustomTextFormField(
+            labelText: 'Username',
+            textInputAction: TextInputAction.next,
+            controller: widget.usernameController,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter a username';
+              }
+              return null;
+            },
+          ),
+          verticalSpace(20),
+          CustomTextFormField(
             labelText: 'Email Address',
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
             controller: widget.emailController,
-            autovalidateMode: hasEmailInteracted
-                ? AutovalidateMode.onUserInteraction
-                : AutovalidateMode.disabled,
-            onChanged: (value) {
-              if (!hasEmailInteracted) {
-                setState(() {
-                  hasEmailInteracted = true;
-                });
-              }
-            },
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
@@ -74,16 +103,6 @@ class _EmailAndPasswordFormState extends State<EmailAndPasswordForm> {
             ),
             isObscureText: isObscureText,
             controller: widget.passwordController,
-            autovalidateMode: hasPasswordInteracted
-                ? AutovalidateMode.onUserInteraction
-                : AutovalidateMode.disabled,
-            onChanged: (value) {
-              if (!hasPasswordInteracted) {
-                setState(() {
-                  hasPasswordInteracted = true;
-                });
-              }
-            },
             validator: (value) {
               if (value == null ||
                   value.isEmpty ||
@@ -92,6 +111,14 @@ class _EmailAndPasswordFormState extends State<EmailAndPasswordForm> {
               }
               return null;
             },
+          ),
+          verticalSpace(20),
+          PasswordValidations(
+            hasLowerCase: hasLowercase,
+            hasUpperCase: hasUppercase,
+            hasSpecialCharacters: hasSpecialCharacters,
+            hasNumber: hasNumber,
+            hasMinLength: hasMinLength,
           ),
         ],
       ),

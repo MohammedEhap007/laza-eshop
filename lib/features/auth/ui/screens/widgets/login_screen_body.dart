@@ -14,7 +14,7 @@ import '../../../../../core/widgets/custom_app_bar.dart';
 import '../../../../../core/widgets/custom_blur_text.dart';
 import '../../../../../core/themes/app_colors.dart';
 
-import 'email_and_password_form.dart';
+import 'login_form.dart';
 import 'login_bloc_listener.dart';
 import 'dont_have_an_account_text.dart';
 
@@ -63,7 +63,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
               ),
             ),
             verticalSpace(165),
-            EmailAndPasswordForm(
+            LoginForm(
               formKey: formKey,
               emailController: emailController,
               passwordController: passwordController,

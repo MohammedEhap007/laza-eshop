@@ -24,7 +24,7 @@ class AppRegex {
   }
 
   static bool hasSpecialCharacter(String password) {
-    return RegExp(r'^(?=.*?[#?!@$%^&*-])').hasMatch(password);
+    return RegExp(r'^(?=.*?[#?!@$%^&*_-])').hasMatch(password);
   }
 
   static bool hasMinLength(String password) {
