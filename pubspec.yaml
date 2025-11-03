@@ -55,6 +55,9 @@ dependencies:
   retrofit: ^4.8.0
   # Key-Value Storage Library for simple data persistence
   shared_preferences: ^2.5.3
+  # OTP Input Field Library
+  pinput: ^5.0.2
+  
 
 dev_dependencies:
   flutter_test:
