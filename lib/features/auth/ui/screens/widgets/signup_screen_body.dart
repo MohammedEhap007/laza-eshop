@@ -6,6 +6,7 @@ import '../../../../../core/widgets/custom_blur_text.dart';
 import '../../../../../core/widgets/custom_text_button.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 
+import 'password_validations_text.dart';
 import 'terms_and_conditions_text.dart';
 
 class SignupScreenBody extends StatelessWidget {
@@ -49,7 +50,15 @@ class SignupScreenBody extends StatelessWidget {
                 return null;
               },
             ),
-            verticalSpace(165),
+            verticalSpace(25),
+            const PasswordValidations(
+              hasLowerCase: true,
+              hasUpperCase: false,
+              hasSpecialCharacters: false,
+              hasNumber: true,
+              hasMinLength: false,
+            ),
+            verticalSpace(50),
             const TermsAndConditionsText(),
             verticalSpace(25),
             CustomTextButton(
