@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:laza_eshop/features/auth/ui/cubits/sign_up_cubit/sign_up_cubit.dart';
 
 import '../../features/auth/ui/cubits/login_cubit/login_cubit.dart';
 import '../../features/auth/ui/screens/login_screen.dart';
@@ -31,7 +32,10 @@ class AppRouter {
         );
       case Routes.signUpScreen:
         return RouterTransitions.navigateHorizontal(
-          const SignupScreen(),
+          BlocProvider(
+            create: (context) => getIt<SignUpCubit>(),
+            child: const SignUpScreen(),
+          ),
         );
       case Routes.verificationCodeScreen:
         return RouterTransitions.navigateHorizontal(

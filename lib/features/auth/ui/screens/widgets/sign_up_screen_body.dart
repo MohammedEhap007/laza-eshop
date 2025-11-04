@@ -10,14 +10,14 @@ import '../../../../../core/widgets/custom_text_form_field.dart';
 import 'password_validations_text.dart';
 import 'terms_and_conditions_text.dart';
 
-class SignupScreenBody extends StatefulWidget {
-  const SignupScreenBody({super.key});
+class SignUpScreenBody extends StatefulWidget {
+  const SignUpScreenBody({super.key});
 
   @override
-  State<SignupScreenBody> createState() => _SignupScreenBodyState();
+  State<SignUpScreenBody> createState() => _SignUpScreenBodyState();
 }
 
-class _SignupScreenBodyState extends State<SignupScreenBody> {
+class _SignUpScreenBodyState extends State<SignUpScreenBody> {
   late GlobalKey<FormState> formKey;
   late TextEditingController usernameController;
   late TextEditingController emailController;
