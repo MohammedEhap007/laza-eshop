@@ -272,12 +272,12 @@ $SignUpSuccessCopyWith<T, SignUpSuccess<T>> get copyWith => _$SignUpSuccessCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignUpSuccess<T>&&const DeepCollectionEquality().equals(other.data, data));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignUpSuccess<T>&&(identical(other.data, data) || other.data == data));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(data));
+int get hashCode => Object.hash(runtimeType,data);
 
 @override
 String toString() {
@@ -309,9 +309,9 @@ class _$SignUpSuccessCopyWithImpl<T,$Res>
 
 /// Create a copy of SignUpState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? data = freezed,}) {
+@pragma('vm:prefer-inline') $Res call({Object? data = null,}) {
   return _then(SignUpSuccess<T>(
-freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as SignUpResponse,
   ));
 }
@@ -338,12 +338,12 @@ $SignUpFailureCopyWith<T, SignUpFailure<T>> get copyWith => _$SignUpFailureCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignUpFailure<T>&&const DeepCollectionEquality().equals(other.apiErrorModel, apiErrorModel));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SignUpFailure<T>&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(apiErrorModel));
+int get hashCode => Object.hash(runtimeType,apiErrorModel);
 
 @override
 String toString() {
@@ -375,9 +375,9 @@ class _$SignUpFailureCopyWithImpl<T,$Res>
 
 /// Create a copy of SignUpState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = freezed,}) {
+@pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
   return _then(SignUpFailure<T>(
-freezed == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
+null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
 as ApiErrorModel,
   ));
 }
