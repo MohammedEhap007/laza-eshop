@@ -17,7 +17,7 @@ class VerifyEmailCubit extends Cubit<VerifyEmailState> {
     required String email,
     required String verificationCode,
   }) async {
-    emit(const VerifyEmailState.loading());
+    emit(const VerifyEmailState.verifyEmailLoading());
     final response = await _verifyEmailRepo.verifyEmail(
       VerifyEmailRequestBody(
         email: email,
@@ -26,10 +26,10 @@ class VerifyEmailCubit extends Cubit<VerifyEmailState> {
     );
     response.when(
       success: (VerifyEmailResponse data) {
-        emit(VerifyEmailState.success(data));
+        emit(VerifyEmailState.verifyEmailSuccess(data));
       },
       failure: (error) {
-        emit(VerifyEmailState.failure(error));
+        emit(VerifyEmailState.verifyEmailFailure(error));
       },
     );
   }

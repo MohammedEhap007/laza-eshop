@@ -55,14 +55,14 @@ extension VerifyEmailStatePatterns<T> on VerifyEmailState<T> {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial<T> value)?  initial,TResult Function( VerifyEmailLoading<T> value)?  loading,TResult Function( VerifyEmailSuccess<T> value)?  success,TResult Function( VerifyEmailFailure<T> value)?  failure,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial<T> value)?  initial,TResult Function( VerifyEmailLoading<T> value)?  verifyEmailLoading,TResult Function( VerifyEmailSuccess<T> value)?  verifyEmailSuccess,TResult Function( VerifyEmailFailure<T> value)?  verifyEmailFailure,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case VerifyEmailLoading() when loading != null:
-return loading(_that);case VerifyEmailSuccess() when success != null:
-return success(_that);case VerifyEmailFailure() when failure != null:
-return failure(_that);case _:
+return initial(_that);case VerifyEmailLoading() when verifyEmailLoading != null:
+return verifyEmailLoading(_that);case VerifyEmailSuccess() when verifyEmailSuccess != null:
+return verifyEmailSuccess(_that);case VerifyEmailFailure() when verifyEmailFailure != null:
+return verifyEmailFailure(_that);case _:
   return orElse();
 
 }
@@ -80,14 +80,14 @@ return failure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial<T> value)  initial,required TResult Function( VerifyEmailLoading<T> value)  loading,required TResult Function( VerifyEmailSuccess<T> value)  success,required TResult Function( VerifyEmailFailure<T> value)  failure,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial<T> value)  initial,required TResult Function( VerifyEmailLoading<T> value)  verifyEmailLoading,required TResult Function( VerifyEmailSuccess<T> value)  verifyEmailSuccess,required TResult Function( VerifyEmailFailure<T> value)  verifyEmailFailure,}){
 final _that = this;
 switch (_that) {
 case _Initial():
 return initial(_that);case VerifyEmailLoading():
-return loading(_that);case VerifyEmailSuccess():
-return success(_that);case VerifyEmailFailure():
-return failure(_that);case _:
+return verifyEmailLoading(_that);case VerifyEmailSuccess():
+return verifyEmailSuccess(_that);case VerifyEmailFailure():
+return verifyEmailFailure(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -104,14 +104,14 @@ return failure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial<T> value)?  initial,TResult? Function( VerifyEmailLoading<T> value)?  loading,TResult? Function( VerifyEmailSuccess<T> value)?  success,TResult? Function( VerifyEmailFailure<T> value)?  failure,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial<T> value)?  initial,TResult? Function( VerifyEmailLoading<T> value)?  verifyEmailLoading,TResult? Function( VerifyEmailSuccess<T> value)?  verifyEmailSuccess,TResult? Function( VerifyEmailFailure<T> value)?  verifyEmailFailure,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case VerifyEmailLoading() when loading != null:
-return loading(_that);case VerifyEmailSuccess() when success != null:
-return success(_that);case VerifyEmailFailure() when failure != null:
-return failure(_that);case _:
+return initial(_that);case VerifyEmailLoading() when verifyEmailLoading != null:
+return verifyEmailLoading(_that);case VerifyEmailSuccess() when verifyEmailSuccess != null:
+return verifyEmailSuccess(_that);case VerifyEmailFailure() when verifyEmailFailure != null:
+return verifyEmailFailure(_that);case _:
   return null;
 
 }
@@ -128,13 +128,13 @@ return failure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( VerifyEmailResponse data)?  success,TResult Function( ApiErrorModel apiErrorModel)?  failure,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  verifyEmailLoading,TResult Function( VerifyEmailResponse data)?  verifyEmailSuccess,TResult Function( ApiErrorModel apiErrorModel)?  verifyEmailFailure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial();case VerifyEmailLoading() when loading != null:
-return loading();case VerifyEmailSuccess() when success != null:
-return success(_that.data);case VerifyEmailFailure() when failure != null:
-return failure(_that.apiErrorModel);case _:
+return initial();case VerifyEmailLoading() when verifyEmailLoading != null:
+return verifyEmailLoading();case VerifyEmailSuccess() when verifyEmailSuccess != null:
+return verifyEmailSuccess(_that.data);case VerifyEmailFailure() when verifyEmailFailure != null:
+return verifyEmailFailure(_that.apiErrorModel);case _:
   return orElse();
 
 }
@@ -152,13 +152,13 @@ return failure(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( VerifyEmailResponse data)  success,required TResult Function( ApiErrorModel apiErrorModel)  failure,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  verifyEmailLoading,required TResult Function( VerifyEmailResponse data)  verifyEmailSuccess,required TResult Function( ApiErrorModel apiErrorModel)  verifyEmailFailure,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case VerifyEmailLoading():
-return loading();case VerifyEmailSuccess():
-return success(_that.data);case VerifyEmailFailure():
-return failure(_that.apiErrorModel);case _:
+return verifyEmailLoading();case VerifyEmailSuccess():
+return verifyEmailSuccess(_that.data);case VerifyEmailFailure():
+return verifyEmailFailure(_that.apiErrorModel);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -175,13 +175,13 @@ return failure(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( VerifyEmailResponse data)?  success,TResult? Function( ApiErrorModel apiErrorModel)?  failure,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  verifyEmailLoading,TResult? Function( VerifyEmailResponse data)?  verifyEmailSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  verifyEmailFailure,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial();case VerifyEmailLoading() when loading != null:
-return loading();case VerifyEmailSuccess() when success != null:
-return success(_that.data);case VerifyEmailFailure() when failure != null:
-return failure(_that.apiErrorModel);case _:
+return initial();case VerifyEmailLoading() when verifyEmailLoading != null:
+return verifyEmailLoading();case VerifyEmailSuccess() when verifyEmailSuccess != null:
+return verifyEmailSuccess(_that.data);case VerifyEmailFailure() when verifyEmailFailure != null:
+return verifyEmailFailure(_that.apiErrorModel);case _:
   return null;
 
 }
@@ -244,7 +244,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'VerifyEmailState<$T>.loading()';
+  return 'VerifyEmailState<$T>.verifyEmailLoading()';
 }
 
 
@@ -281,7 +281,7 @@ int get hashCode => Object.hash(runtimeType,data);
 
 @override
 String toString() {
-  return 'VerifyEmailState<$T>.success(data: $data)';
+  return 'VerifyEmailState<$T>.verifyEmailSuccess(data: $data)';
 }
 
 
@@ -347,7 +347,7 @@ int get hashCode => Object.hash(runtimeType,apiErrorModel);
 
 @override
 String toString() {
-  return 'VerifyEmailState<$T>.failure(apiErrorModel: $apiErrorModel)';
+  return 'VerifyEmailState<$T>.verifyEmailFailure(apiErrorModel: $apiErrorModel)';
 }
 
 

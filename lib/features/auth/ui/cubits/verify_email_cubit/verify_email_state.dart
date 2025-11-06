@@ -9,9 +9,10 @@ part 'verify_email_state.freezed.dart';
 class VerifyEmailState<T> with _$VerifyEmailState<T> {
   const factory VerifyEmailState.initial() = _Initial;
 
-  const factory VerifyEmailState.loading() = VerifyEmailLoading;
-  const factory VerifyEmailState.success(VerifyEmailResponse data) =
+  const factory VerifyEmailState.verifyEmailLoading() = VerifyEmailLoading;
+  const factory VerifyEmailState.verifyEmailSuccess(VerifyEmailResponse data) =
       VerifyEmailSuccess<T>;
-  const factory VerifyEmailState.failure(ApiErrorModel apiErrorModel) =
-      VerifyEmailFailure<T>;
+  const factory VerifyEmailState.verifyEmailFailure(
+    ApiErrorModel apiErrorModel,
+  ) = VerifyEmailFailure<T>;
 }
