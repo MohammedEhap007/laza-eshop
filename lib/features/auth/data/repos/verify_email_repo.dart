@@ -12,14 +12,13 @@ class VerifyEmailRepo {
   VerifyEmailRepo(this._authService);
 
   Future<ApiResult<VerifyEmailResponse>> verifyEmail(
-    String email,
-    String verificationCode,
+    VerifyEmailRequestBody verifyEmailRequestBody,
   ) async {
     try {
       final response = await _authService.verifyEmail(
         VerifyEmailRequestBody(
-          email: email,
-          verificationCode: verificationCode,
+          email: verifyEmailRequestBody.email,
+          verificationCode: verifyEmailRequestBody.verificationCode,
         ),
       );
       AppLogger.success('Verify Email Repo Succeeded To Handle The Response');
