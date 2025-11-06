@@ -16,7 +16,12 @@ import '../../../../../core/widgets/custom_text_button.dart';
 import 'resend_code_text.dart';
 
 class VerificationCodeScreenBody extends StatelessWidget {
-  const VerificationCodeScreenBody({super.key});
+  final String email;
+
+  const VerificationCodeScreenBody({
+    super.key,
+    required this.email,
+  });
 
   @override
   Widget build(BuildContext context) {
