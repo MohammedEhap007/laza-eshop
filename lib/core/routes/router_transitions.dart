@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 class RouterTransitions {
-  static PageRouteBuilder navigateVertical(Widget widget) {
+  static PageRouteBuilder navigateVertical(
+    Widget widget, {
+    RouteSettings? settings,
+  }) {
     return PageRouteBuilder(
+      settings: settings,
       pageBuilder: (context, animation, secondaryAnimation) => widget,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(0.0, 1.0);
@@ -20,8 +24,12 @@ class RouterTransitions {
     );
   }
 
-  static PageRouteBuilder navigateHorizontal(Widget widget) {
+  static PageRouteBuilder navigateHorizontal(
+    Widget widget, {
+    RouteSettings? settings,
+  }) {
     return PageRouteBuilder(
+      settings: settings,
       pageBuilder: (context, animation, secondaryAnimation) => widget,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(1.0, 0.0);
@@ -40,8 +48,12 @@ class RouterTransitions {
     );
   }
 
-  static PageRouteBuilder navigateFade(Widget widget) {
+  static PageRouteBuilder navigateFade(
+    Widget widget, {
+    RouteSettings? settings,
+  }) {
     return PageRouteBuilder(
+      settings: settings,
       pageBuilder: (context, animation, secondaryAnimation) => widget,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return FadeTransition(
@@ -52,8 +64,12 @@ class RouterTransitions {
     );
   }
 
-  static PageRouteBuilder navigateScale(Widget widget) {
+  static PageRouteBuilder navigateScale(
+    Widget widget, {
+    RouteSettings? settings,
+  }) {
     return PageRouteBuilder(
+      settings: settings,
       pageBuilder: (context, animation, secondaryAnimation) => widget,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return ScaleTransition(

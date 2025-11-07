@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:laza_eshop/features/auth/ui/cubits/sign_up_cubit/sign_up_cubit.dart';
 
 import '../../features/auth/ui/cubits/login_cubit/login_cubit.dart';
+import '../../features/auth/ui/cubits/verify_email_cubit/verify_email_cubit.dart';
 import '../../features/auth/ui/screens/login_screen.dart';
-import '../../features/auth/ui/screens/signup_screen.dart';
+import '../../features/auth/ui/screens/sign_up_screen.dart';
+import '../../features/auth/ui/screens/verification_code_screen.dart';
 import '../../features/home/ui/screens/home_screen.dart';
 import '../../features/onboarding/ui/screens/onboarding_screen.dart';
 import '../di/dependency_injection.dart';
@@ -14,7 +17,7 @@ import 'routes.dart';
 class AppRouter {
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     //this arguments to be passed in any screen like this (arguments as ClassName)
-    //final arguments = settings.arguments;
+    final arguments = settings.arguments;
 
     switch (settings.name) {
       case Routes.onBoardingScreen:
@@ -30,7 +33,18 @@ class AppRouter {
         );
       case Routes.signUpScreen:
         return RouterTransitions.navigateHorizontal(
-          const SignupScreen(),
+          BlocProvider(
+            create: (context) => getIt<SignUpCubit>(),
+            child: const SignUpScreen(),
+          ),
+        );
+      case Routes.verificationCodeScreen:
+        final email = arguments as String?;
+        return RouterTransitions.navigateHorizontal(
+          BlocProvider(
+            create: (context) => getIt<VerifyEmailCubit>(),
+            child: VerificationCodeScreen(email: email ?? ''),
+          ),
         );
       case Routes.homeScreen:
         return RouterTransitions.navigateFade(

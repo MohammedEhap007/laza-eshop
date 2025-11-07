@@ -29,5 +29,7 @@ class AppAssets {
   static const String imagesOnboardingLightTopEllipse = "assets/images/onboarding_light_top_ellipse.png";
 
   static const String imagesOnboardingMan = "assets/images/onboarding_man.png";
+
+  static const String imagesVerificationCloud = "assets/images/verification_cloud.svg";
 }
 
