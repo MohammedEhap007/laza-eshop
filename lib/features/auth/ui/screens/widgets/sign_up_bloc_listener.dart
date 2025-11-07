@@ -9,11 +9,11 @@ import '../../cubits/sign_up_cubit/sign_up_cubit.dart';
 import '../../cubits/sign_up_cubit/sign_up_state.dart';
 
 class SignUpBlocListener extends StatelessWidget {
-  final String email;
+  final TextEditingController emailController;
 
   const SignUpBlocListener({
     super.key,
-    required this.email,
+    required this.emailController,
   });
 
   @override
@@ -30,7 +30,7 @@ class SignUpBlocListener extends StatelessWidget {
               onConfirm: () {
                 context.pushNamed(
                   Routes.verificationCodeScreen,
-                  arguments: email,
+                  arguments: emailController.text.trim(),
                 );
               },
             );

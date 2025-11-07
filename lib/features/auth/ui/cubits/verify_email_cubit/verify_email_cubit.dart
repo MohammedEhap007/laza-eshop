@@ -25,8 +25,8 @@ class VerifyEmailCubit extends Cubit<VerifyEmailState> {
       ),
     );
     response.when(
-      success: (VerifyEmailResponse data) {
-        emit(VerifyEmailState.verifyEmailSuccess(data));
+      success: (VerifyEmailResponse verifyEmailResponse) {
+        emit(VerifyEmailState.verifyEmailSuccess(verifyEmailResponse));
       },
       failure: (error) {
         emit(VerifyEmailState.verifyEmailFailure(error));

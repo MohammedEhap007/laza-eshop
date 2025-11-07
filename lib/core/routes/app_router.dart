@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:laza_eshop/features/auth/ui/cubits/sign_up_cubit/sign_up_cubit.dart';
 
 import '../../features/auth/ui/cubits/login_cubit/login_cubit.dart';
+import '../../features/auth/ui/cubits/verify_email_cubit/verify_email_cubit.dart';
 import '../../features/auth/ui/screens/login_screen.dart';
 import '../../features/auth/ui/screens/sign_up_screen.dart';
 import '../../features/auth/ui/screens/verification_code_screen.dart';
@@ -40,7 +41,10 @@ class AppRouter {
       case Routes.verificationCodeScreen:
         final email = arguments as String?;
         return RouterTransitions.navigateHorizontal(
-          VerificationCodeScreen(email: email ?? ''),
+          BlocProvider(
+            create: (context) => getIt<VerifyEmailCubit>(),
+            child: VerificationCodeScreen(email: email ?? ''),
+          ),
         );
       case Routes.homeScreen:
         return RouterTransitions.navigateFade(

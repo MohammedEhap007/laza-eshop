@@ -15,16 +15,16 @@ class VerifyEmailRepo {
     VerifyEmailRequestBody verifyEmailRequestBody,
   ) async {
     try {
-      final response = await _authService.verifyEmail(
-        VerifyEmailRequestBody(
-          email: verifyEmailRequestBody.email,
-          verificationCode: verifyEmailRequestBody.verificationCode,
-        ),
-      );
+      final response = await _authService.verifyEmail(verifyEmailRequestBody);
       AppLogger.success('Verify Email Repo Succeeded To Handle The Response');
-      return ApiResult.success(response);
+      // Convert the plain string response to VerifyEmailResponse object
+      final verifyEmailResponse = VerifyEmailResponse(
+        message: response.replaceAll(r'"', ''),
+      );
+      return ApiResult.success(verifyEmailResponse);
     } catch (error) {
       AppLogger.error('Verify Email Repo Failed To Handle The Response');
+      AppLogger.error('Error details: $error');
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }

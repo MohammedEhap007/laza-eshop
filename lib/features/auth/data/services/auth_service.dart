@@ -23,7 +23,7 @@ abstract class AuthService {
   Future<SignUpResponse> signUp(@Body() SignUpRequestBody signUpRequestBody);
 
   @POST(ApiConstants.verifyEmail)
-  Future<VerifyEmailResponse> verifyEmail(
+  Future<String> verifyEmail(
     @Body() VerifyEmailRequestBody verifyEmailRequestBody,
   );
 }

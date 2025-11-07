@@ -82,6 +82,8 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
             const DontHaveAnAccountText(),
             verticalSpace(25),
             BlocBuilder<LoginCubit, LoginState>(
+              buildWhen: (previous, current) =>
+                  current is LoginLoading || previous is LoginLoading,
               builder: (context, state) {
                 return CustomTextButton(
                   isLoading: state is LoginLoading,

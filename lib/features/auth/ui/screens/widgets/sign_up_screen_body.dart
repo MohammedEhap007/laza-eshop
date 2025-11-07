@@ -64,6 +64,8 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
             const TermsAndConditionsText(),
             verticalSpace(25),
             BlocBuilder<SignUpCubit, SignUpState>(
+              buildWhen: (previous, current) =>
+                  current is SignUpLoading || previous is SignUpLoading,
               builder: (context, state) {
                 return CustomTextButton(
                   isLoading: state is SignUpLoading,
@@ -88,7 +90,7 @@ class _SignUpScreenBodyState extends State<SignUpScreenBody> {
               },
             ),
             verticalSpace(15),
-            SignUpBlocListener(email: emailController.text),
+            SignUpBlocListener(emailController: emailController),
           ],
         ),
       ),
