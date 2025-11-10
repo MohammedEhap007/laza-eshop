@@ -2,6 +2,8 @@
 class AppAssets {
   AppAssets._();
   
+  static const String iconsAccountInfoIcon = "assets/icons/account_info_icon.svg";
+
   static const String iconsAppIcon = "assets/icons/app_icon.png";
 
   static const String iconsArrowBackDarkIcon = "assets/icons/arrow_back_dark_icon.svg";
@@ -12,9 +14,19 @@ class AppAssets {
 
   static const String iconsCloseMenuIcon = "assets/icons/close_menu_icon.svg";
 
+  static const String iconsDarkModeIcon = "assets/icons/dark_mode_icon.svg";
+
   static const String iconsHomeIcon = "assets/icons/home_icon.svg";
 
+  static const String iconsLogoutIcon = "assets/icons/logout_icon.svg";
+
+  static const String iconsMyCardsIcon = "assets/icons/my_cards_icon.svg";
+
   static const String iconsOpenMenuIcon = "assets/icons/open_menu_icon.svg";
+
+  static const String iconsPasswordIcon = "assets/icons/password_icon.svg";
+
+  static const String iconsSettingIcon = "assets/icons/setting_icon.svg";
 
   static const String iconsVerifiedIcon = "assets/icons/verified_icon.svg";
 
