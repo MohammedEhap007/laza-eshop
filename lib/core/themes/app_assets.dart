@@ -16,7 +16,11 @@ class AppAssets {
 
   static const String iconsOpenMenuIcon = "assets/icons/open_menu_icon.svg";
 
+  static const String iconsVerifiedIcon = "assets/icons/verified_icon.svg";
+
   static const String iconsWishlistIcon = "assets/icons/wishlist_icon.svg";
+
+  static const String imagesAvatarImage = "assets/images/avatar_image.png";
 
   static const String imagesDarkSplashScreenAndroid12 = "assets/images/dark_splash_screen_android_12.png";
 

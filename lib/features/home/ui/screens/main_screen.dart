@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:laza_eshop/core/themes/app_assets.dart';
@@ -45,19 +46,27 @@ class _MainScreenState extends State<MainScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: IndexedStack(
-          index: currentScreenIndex,
-          children: screens,
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop) {
+          SystemNavigator.pop();
+        }
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: IndexedStack(
+            index: currentScreenIndex,
+            children: screens,
+          ),
         ),
-      ),
-      bottomNavigationBar: CustomAppBottomNavigationBar(
-        onItemTapped: (index) {
-          setState(() {
-            currentScreenIndex = index;
-          });
-        },
+        bottomNavigationBar: CustomAppBottomNavigationBar(
+          onItemTapped: (index) {
+            setState(() {
+              currentScreenIndex = index;
+            });
+          },
+        ),
       ),
     );
   }
