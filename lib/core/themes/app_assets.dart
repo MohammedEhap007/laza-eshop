@@ -10,7 +10,11 @@ class AppAssets {
 
   static const String iconsCartIcon = "assets/icons/cart_icon.svg";
 
+  static const String iconsCloseMenuIcon = "assets/icons/close_menu_icon.svg";
+
   static const String iconsHomeIcon = "assets/icons/home_icon.svg";
+
+  static const String iconsOpenMenuIcon = "assets/icons/open_menu_icon.svg";
 
   static const String iconsWishlistIcon = "assets/icons/wishlist_icon.svg";
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:laza_eshop/features/home/ui/screens/widgets/home_screen_body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,11 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Text('Home Screen'),
-        ),
-      ),
+      body: HomeScreenBody(),
     );
   }
 }

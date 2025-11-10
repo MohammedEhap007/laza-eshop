@@ -20,8 +20,28 @@ class _MainScreenState extends State<MainScreen> {
   int currentScreenIndex = 0;
   final List<Widget> screens = [
     const HomeScreen(),
-    const Scaffold(),
-    const Scaffold(),
+    const SizedBox.expand(
+      child: ColoredBox(
+        color: AppColors.purple,
+        child: Center(
+          child: Text(
+            'Wishlist Screen',
+            style: TextStyle(color: Colors.white, fontSize: 24),
+          ),
+        ),
+      ),
+    ), // Placeholder for Wishlist Screen
+    const SizedBox.expand(
+      child: ColoredBox(
+        color: AppColors.lightRed,
+        child: Center(
+          child: Text(
+            'Cart Screen',
+            style: TextStyle(color: Colors.white, fontSize: 24),
+          ),
+        ),
+      ),
+    ), // Placeholder for Cart Screen
   ];
   @override
   Widget build(BuildContext context) {
