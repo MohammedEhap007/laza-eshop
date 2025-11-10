@@ -8,6 +8,7 @@ import '../../features/auth/ui/screens/login_screen.dart';
 import '../../features/auth/ui/screens/sign_up_screen.dart';
 import '../../features/auth/ui/screens/verification_code_screen.dart';
 import '../../features/home/ui/screens/home_screen.dart';
+import '../../features/home/ui/screens/main_screen.dart';
 import '../../features/onboarding/ui/screens/onboarding_screen.dart';
 import '../di/dependency_injection.dart';
 
@@ -46,9 +47,9 @@ class AppRouter {
             child: VerificationCodeScreen(email: email ?? ''),
           ),
         );
-      case Routes.homeScreen:
+      case Routes.mainScreen:
         return RouterTransitions.navigateFade(
-          const HomeScreen(),
+          const MainScreen(),
         );
       default:
         return RouterTransitions.navigate(

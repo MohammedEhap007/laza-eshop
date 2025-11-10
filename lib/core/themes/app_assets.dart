@@ -8,6 +8,12 @@ class AppAssets {
 
   static const String iconsArrowBackLightIcon = "assets/icons/arrow_back_light_icon.svg";
 
+  static const String iconsCartIcon = "assets/icons/cart_icon.svg";
+
+  static const String iconsHomeIcon = "assets/icons/home_icon.svg";
+
+  static const String iconsWishlistIcon = "assets/icons/wishlist_icon.svg";
+
   static const String imagesDarkSplashScreenAndroid12 = "assets/images/dark_splash_screen_android_12.png";
 
   static const String imagesDarkSplashScreenImage = "assets/images/dark_splash_screen_image.png";
