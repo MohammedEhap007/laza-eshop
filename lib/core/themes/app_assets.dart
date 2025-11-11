@@ -26,6 +26,8 @@ class AppAssets {
 
   static const String iconsPasswordIcon = "assets/icons/password_icon.svg";
 
+  static const String iconsSearchIcon = "assets/icons/search_icon.svg";
+
   static const String iconsSettingIcon = "assets/icons/setting_icon.svg";
 
   static const String iconsVerifiedIcon = "assets/icons/verified_icon.svg";
