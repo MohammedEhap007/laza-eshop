@@ -22,7 +22,7 @@ class LoginBlocListener extends StatelessWidget {
         state.whenOrNull(
           loginSuccess: (data) {
             context.pushNamedAndRemoveUntil(
-              Routes.homeScreen,
+              Routes.mainScreen,
               predicate: (_) => false,
             );
             CacheHelper.setData(
