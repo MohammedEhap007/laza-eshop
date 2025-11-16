@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:laza_eshop/core/di/dependency_injection.dart';
 import 'package:laza_eshop/core/helpers/spacing.dart';
 import 'package:laza_eshop/core/themes/app_assets.dart';
 import 'package:laza_eshop/core/themes/app_colors.dart';
@@ -10,11 +11,14 @@ import 'package:laza_eshop/core/utils/app_extensions.dart';
 import 'package:laza_eshop/core/utils/app_logger.dart';
 import 'package:laza_eshop/core/widgets/custom_app_bar.dart';
 import 'package:laza_eshop/core/widgets/custom_blur_text.dart';
+import 'package:laza_eshop/features/auth/ui/cubits/resend_otp_cubit/resend_otp_cubit.dart';
 import 'package:laza_eshop/features/auth/ui/screens/widgets/otp_fields.dart';
+import 'package:laza_eshop/features/auth/ui/screens/widgets/resend_otp_bloc_listener.dart';
 import 'package:laza_eshop/features/auth/ui/screens/widgets/verification_code_bloc_listener.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../../../../core/widgets/custom_text_button.dart';
+import '../../../data/repos/resend_otp_repo.dart';
 import '../../cubits/verify_email_cubit/verify_email_cubit.dart';
 import '../../cubits/verify_email_cubit/verify_email_state.dart';
 import 'resend_code_text.dart';
@@ -73,7 +77,25 @@ class _VerificationCodeScreenBodyState
               verificationCodeController: verificationCodeController,
             ),
             verticalSpace(165),
-            ResendCodeText(onResend: () {}),
+            BlocProvider(
+              create: (context) => ResendOtpCubit(getIt<ResendOtpRepo>()),
+              child: Builder(
+                builder: (context) {
+                  return Column(
+                    children: [
+                      ResendCodeText(
+                        onResend: () {
+                          context.read<ResendOtpCubit>().resendOtp(
+                            email: widget.email,
+                          );
+                        },
+                      ),
+                      const ResendOtpBlocListener(),
+                    ],
+                  );
+                },
+              ),
+            ),
             verticalSpace(25),
             BlocBuilder<VerifyEmailCubit, VerifyEmailState>(
               buildWhen: (previous, current) =>
