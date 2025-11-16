@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -44,8 +46,35 @@ class ApiErrorHandler {
             errors: ["Bad Certificate"],
           ),
           badResponse: () {
-            final allErrors =
-                e.response?.data["errors"] as Map<String, dynamic>?;
+            // Handle repeated requests (rate limiting)
+            if (e.response?.statusCode == 429) {
+              final message = e.response?.data is String
+                  ? e.response?.data
+                  : "You are requesting this endpoint too frequently!";
+              return ApiErrorModel(
+                statusCode: 429,
+                message: message,
+                errors: ["Rate Limit Exceeded"],
+                icon: Icons.speed_outlined,
+              );
+            }
+            // Parse response data if it's a string
+            dynamic responseData = e.response?.data;
+            if (responseData is String) {
+              try {
+                responseData = jsonDecode(responseData);
+              } catch (_) {
+                // If it's not valid JSON, treat as plain error message
+                return ApiErrorModel(
+                  statusCode: e.response?.statusCode,
+                  message: responseData,
+                  errors: [responseData],
+                  icon: Icons.error_outline,
+                );
+              }
+            }
+            // Handle errors from the API
+            final allErrors = responseData["errors"] as Map<String, dynamic>?;
             final errorsList = <String>[];
             if (allErrors != null) {
               allErrors.forEach((key, value) {
@@ -57,7 +86,7 @@ class ApiErrorHandler {
             }
             return ApiErrorModel(
               statusCode: e.response?.statusCode,
-              message: e.response?.data["message"],
+              message: responseData["message"],
               errors: errorsList,
               icon: Icons.error_outline,
             );
