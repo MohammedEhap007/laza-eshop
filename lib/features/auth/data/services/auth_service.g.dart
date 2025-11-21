@@ -148,7 +148,7 @@ class _AuthService implements AuthService {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'auth/refresh',
+            'auth/refresh-token',
             queryParameters: queryParameters,
             data: _data,
           )

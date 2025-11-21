@@ -13,4 +13,3 @@ VerifyEmailResponse _$VerifyEmailResponseFromJson(Map<String, dynamic> json) =>
       );
       return val;
     });
-
