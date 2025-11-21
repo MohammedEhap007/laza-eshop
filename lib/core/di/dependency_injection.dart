@@ -16,10 +16,10 @@ final getIt = GetIt.instance;
 
 Future<void> setupGetIt() async {
   // Dio & AuthService dependencies
+
   // Create Dio instance first WITHOUT interceptors
   Dio dio = DioFactory.getDioWithoutInterceptors();
   getIt.registerLazySingleton<AuthService>(() => AuthService(dio));
-
   // Now add interceptors after AuthService is registered
   DioFactory.addDioInterceptor();
 
