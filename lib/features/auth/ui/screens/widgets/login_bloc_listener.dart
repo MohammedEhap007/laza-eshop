@@ -29,6 +29,14 @@ class LoginBlocListener extends StatelessWidget {
               key: CacheHelperKeys.login,
               value: true,
             );
+            CacheHelper.setSecureData(
+              key: CacheHelperKeys.accessToken,
+              value: data.accessToken,
+            );
+            CacheHelper.setSecureData(
+              key: CacheHelperKeys.refreshToken,
+              value: data.refreshToken,
+            );
           },
           loginFailure: (error) {
             showErrorDialog(context, error);

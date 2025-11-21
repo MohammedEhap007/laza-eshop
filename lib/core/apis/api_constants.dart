@@ -4,5 +4,4 @@ class ApiConstants {
   static const String signup = "auth/register";
   static const String verifyEmail = "auth/verify-email";
   static const String resendOtp = "auth/resend-otp";
-  static const String refreshToken = "auth/refresh-token";
 }

@@ -8,8 +8,6 @@ import 'package:retrofit/http.dart';
 import '../../../../core/apis/api_constants.dart';
 import '../models/login_request_body.dart';
 import '../models/login_response.dart';
-import '../models/refresh_token_request_body.dart';
-import '../models/refresh_token_response.dart';
 import '../models/resend_otp_request_body.dart';
 import '../models/sign_up_request_body.dart';
 
@@ -33,10 +31,5 @@ abstract class AuthService {
   @POST(ApiConstants.resendOtp)
   Future<String> resendOtp(
     @Body() ResendOtpRequestBody resendOtpRequestBody,
-  );
-
-  @POST(ApiConstants.refreshToken)
-  Future<RefreshTokenResponse> refreshToken(
-    @Body() RefreshTokenRequestBody refreshTokenRequestBody,
   );
 }
