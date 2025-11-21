@@ -40,7 +40,7 @@ class RefreshTokenInterceptor extends Interceptor {
     if (err.response?.statusCode == 401) {
       AppLogger.warning('Received 401 Unauthorized - Attempting token refresh');
 
-      // Step 1: Get the stored refresh token from secure storage
+      // Get the stored refresh token from secure storage
       final storedRefreshToken = await CacheHelper.getSecureData(
         key: CacheHelperKeys.refreshToken,
       );
@@ -51,7 +51,7 @@ class RefreshTokenInterceptor extends Interceptor {
         return handler.next(err);
       }
 
-      // Step 2: Check if another request is already refreshing the token
+      // Check if another request is already refreshing the token
       // If yes, wait for it to complete instead of starting a new refresh
       if (_isRefreshing && _refreshCompleter != null) {
         try {
@@ -71,18 +71,18 @@ class RefreshTokenInterceptor extends Interceptor {
         }
       }
 
-      // Step 3: This is the first 401 error, so start the refresh process
+      // This is the first 401 error, so start the refresh process
       _isRefreshing = true;
       _refreshCompleter =
           Completer<String>(); // Create a promise for waiting requests
 
       try {
-        // Step 4: Call the refresh token API endpoint
+        // Call the refresh token API endpoint
         final refreshResponse = await authService.refreshToken(
           RefreshTokenRequestBody(refreshToken: storedRefreshToken),
         );
 
-        // Step 5: Save the new tokens to secure storage
+        // Save the new tokens to secure storage
         await CacheHelper.setSecureData(
           key: CacheHelperKeys.accessToken,
           value: refreshResponse.accessToken,
@@ -92,12 +92,12 @@ class RefreshTokenInterceptor extends Interceptor {
           value: refreshResponse.refreshToken,
         );
 
-        AppLogger.success('Token refresh successful');
+        AppLogger.success('Token refreshed successfully');
 
-        // Step 6: Fulfill the promise so all waiting requests can proceed
+        // Fulfill the promise so all waiting requests can proceed
         _refreshCompleter?.complete(refreshResponse.accessToken);
 
-        // Step 7: Retry the original failed request with the new token
+        // Retry the original failed request with the new token
         final options = err.requestOptions;
         options.headers['Authorization'] =
             'Bearer ${refreshResponse.accessToken}';
@@ -122,7 +122,7 @@ class RefreshTokenInterceptor extends Interceptor {
         _isRefreshing = false;
         _refreshCompleter = null;
 
-        // Step 8: Refresh failed - clear all tokens and force re-login
+        // Refresh failed - clear all tokens and force re-login
         await CacheHelper.deleteSecureData(key: CacheHelperKeys.accessToken);
         await CacheHelper.deleteSecureData(key: CacheHelperKeys.refreshToken);
         await CacheHelper.setData(key: CacheHelperKeys.login, value: false);
