@@ -15,9 +15,13 @@ import '../apis/dio_factory.dart';
 final getIt = GetIt.instance;
 
 Future<void> setupGetIt() async {
-  // Dio & ApiServices dependencies
-  Dio dio = DioFactory.getDio();
+  // Dio & AuthService dependencies
+  // Create Dio instance first WITHOUT interceptors
+  Dio dio = DioFactory.getDioWithoutInterceptors();
   getIt.registerLazySingleton<AuthService>(() => AuthService(dio));
+
+  // Now add interceptors after AuthService is registered
+  DioFactory.addDioInterceptor();
 
   // login dependencies
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt<AuthService>()));

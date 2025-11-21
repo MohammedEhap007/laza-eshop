@@ -11,6 +11,14 @@ class DioFactory {
   static Dio? dio;
 
   static Dio getDio() {
+    if (dio == null) {
+      getDioWithoutInterceptors();
+      addDioInterceptor();
+    }
+    return dio!;
+  }
+
+  static Dio getDioWithoutInterceptors() {
     Duration timeOut = const Duration(seconds: 30);
 
     if (dio == null) {
@@ -23,11 +31,8 @@ class DioFactory {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
         };
-      addDioInterceptor();
-      return dio!;
-    } else {
-      return dio!;
     }
+    return dio!;
   }
 
   static void addDioInterceptor() {
