@@ -1,5 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:laza_eshop/core/di/dependency_injection.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+
+import '../../features/auth/data/services/auth_service.dart';
+import 'refresh_token_interceptor.dart';
 
 class DioFactory {
   DioFactory._();
@@ -27,6 +31,7 @@ class DioFactory {
   }
 
   static void addDioInterceptor() {
+    dio?.interceptors.add(RefreshTokenInterceptor(getIt<AuthService>(), dio!));
     dio?.interceptors.add(
       PrettyDioLogger(
         requestHeader: true,
