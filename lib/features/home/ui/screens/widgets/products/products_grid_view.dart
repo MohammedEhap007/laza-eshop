@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/products_grid_view_item.dart';
+import 'package:laza_eshop/features/home/data/models/products_response.dart';
+import 'package:laza_eshop/features/home/ui/screens/widgets/products/products_grid_view_item.dart';
 
 class ProductsGridView extends StatelessWidget {
-  const ProductsGridView({super.key});
+  const ProductsGridView({super.key, required this.productsResponse});
+
+  final ProductsResponse productsResponse;
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +19,11 @@ class ProductsGridView extends StatelessWidget {
           childAspectRatio: 0.65,
         ),
         itemBuilder: (context, index) {
-          return const ProductsGridViewItem();
+          return ProductsGridViewItem(
+            productsItemModel: productsResponse.products![index],
+          );
         },
-        itemCount: 10,
+        itemCount: productsResponse.products!.length,
       ),
     );
   }

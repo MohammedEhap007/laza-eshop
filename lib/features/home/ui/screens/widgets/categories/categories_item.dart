@@ -6,9 +6,13 @@ import 'package:laza_eshop/core/themes/app_assets.dart';
 import 'package:laza_eshop/core/themes/app_colors.dart';
 import 'package:laza_eshop/core/themes/app_text_styles.dart';
 import 'package:laza_eshop/core/utils/app_extensions.dart';
+import 'package:laza_eshop/features/home/data/models/categories_item_model.dart';
+import 'package:laza_eshop/features/home/data/models/categories_response.dart';
 
 class CategoriesItem extends StatelessWidget {
-  const CategoriesItem({super.key});
+  const CategoriesItem({super.key, required this.categoriesItemModel});
+
+  final CategoriesItemModel categoriesItemModel;
 
   @override
   Widget build(BuildContext context) {
@@ -31,14 +35,24 @@ class CategoriesItem extends StatelessWidget {
                   : AppColors.mainLight,
               borderRadius: BorderRadius.circular(10.r),
             ),
-            child: SvgPicture.asset(
-              AppAssets.iconsCartIcon,
-              fit: BoxFit.scaleDown,
-            ),
+            child: categoriesItemModel.imageUrl.isEmpty
+                ? Image.asset(
+                    AppAssets.iconsCategoriesLoadingIcon,
+                    fit: BoxFit.cover,
+                  )
+                : SvgPicture.network(
+                    categoriesItemModel.imageUrl,
+                    placeholderBuilder: (context) => Image.asset(
+                      AppAssets.iconsCategoriesLoadingIcon,
+                      fit: BoxFit.cover,
+                    ),
+                    fit: BoxFit.scaleDown,
+                    allowDrawingOutsideViewBox: true,
+                  ),
           ),
           horizontalSpace(10),
           Text(
-            'Sports',
+            categoriesItemModel.name.toUpperCase(),
             style: AppTextStyles.font14Medium,
           ),
         ],

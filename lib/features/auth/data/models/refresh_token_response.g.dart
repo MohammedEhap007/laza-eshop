@@ -16,4 +16,3 @@ RefreshTokenResponse _$RefreshTokenResponseFromJson(
   );
   return val;
 });
-

@@ -13,4 +13,3 @@ SignUpResponse _$SignUpResponseFromJson(Map<String, dynamic> json) =>
       );
       return val;
     });
-
