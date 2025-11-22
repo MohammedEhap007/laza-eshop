@@ -4,12 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:laza_eshop/core/themes/app_colors.dart';
 import 'package:laza_eshop/core/themes/app_text_styles.dart';
 import 'package:laza_eshop/core/utils/app_extensions.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/drawer_item.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/drawer_items_list_view.dart';
+import 'package:laza_eshop/features/home/ui/screens/widgets/drawer/drawer_item.dart';
+import 'package:laza_eshop/features/home/ui/screens/widgets/drawer/drawer_items_list_view.dart';
 
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/themes/app_assets.dart';
-import '../../../data/models/drawer_item_model.dart';
+import '../../../../../../core/helpers/spacing.dart';
+import '../../../../../../core/themes/app_assets.dart';
+import '../../../../data/models/drawer_item_model.dart';
 import 'drawer_close_icon_button.dart';
 import 'drawer_user_info.dart';
 

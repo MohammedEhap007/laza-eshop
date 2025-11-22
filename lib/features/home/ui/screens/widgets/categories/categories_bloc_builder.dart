@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-import '../../../data/models/categories_item_model.dart';
-import '../../../data/models/categories_response.dart';
-import '../../cubits/categories_cubit/categories_cubit.dart';
-import '../../cubits/categories_cubit/categories_state.dart';
+import '../../../../data/models/categories_item_model.dart';
+import '../../../../data/models/categories_response.dart';
+import '../../../cubits/categories_cubit/categories_cubit.dart';
+import '../../../cubits/categories_cubit/categories_state.dart';
 import 'categories_list_view.dart';
 
 class CategoriesBlocBuilder extends StatelessWidget {

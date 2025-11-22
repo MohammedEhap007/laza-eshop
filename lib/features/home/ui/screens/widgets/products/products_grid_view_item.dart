@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:laza_eshop/core/helpers/spacing.dart';
 import 'package:laza_eshop/core/themes/app_text_styles.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/product_item.dart';
+import 'package:laza_eshop/features/home/ui/screens/widgets/products/product_item.dart';
 
 class ProductsGridViewItem extends StatelessWidget {
   const ProductsGridViewItem({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:laza_eshop/features/home/data/models/categories_response.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/categories_item.dart';
+import 'package:laza_eshop/features/home/ui/screens/widgets/categories/categories_item.dart';
 
 class CategoriesListView extends StatelessWidget {
   const CategoriesListView({super.key, required this.categoriesResponse});

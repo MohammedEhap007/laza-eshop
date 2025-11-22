@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/products_grid_view_item.dart';
+import 'package:laza_eshop/features/home/ui/screens/widgets/products/products_grid_view_item.dart';
 
 class ProductsGridView extends StatelessWidget {
   const ProductsGridView({super.key});
