@@ -12,6 +12,8 @@ class AppAssets {
 
   static const String iconsCartIcon = "assets/icons/cart_icon.svg";
 
+  static const String iconsCategoriesLoadingIcon = "assets/icons/categories_loading_icon.gif";
+
   static const String iconsCloseMenuIcon = "assets/icons/close_menu_icon.svg";
 
   static const String iconsDarkModeIcon = "assets/icons/dark_mode_icon.svg";
@@ -25,6 +27,8 @@ class AppAssets {
   static const String iconsOpenMenuIcon = "assets/icons/open_menu_icon.svg";
 
   static const String iconsPasswordIcon = "assets/icons/password_icon.svg";
+
+  static const String iconsProductsLoadingIcon = "assets/icons/products_loading_icon.gif";
 
   static const String iconsSearchIcon = "assets/icons/search_icon.svg";
 
