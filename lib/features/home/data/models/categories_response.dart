@@ -1,19 +1,14 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'categories_item_model.dart';
 
 part 'categories_response.g.dart';
 
 @JsonSerializable(checked: true)
 class CategoriesResponse {
-  final int id;
-  final String name;
-  @JsonKey(name: 'coverPictureUrl')
-  final String imageUrl;
+  final List<CategoriesItemModel> categories;
 
-  CategoriesResponse({
-    required this.id,
-    required this.name,
-    required this.imageUrl,
-  });
+  CategoriesResponse({required this.categories});
 
   factory CategoriesResponse.fromJson(Map<String, dynamic> json) =>
       _$CategoriesResponseFromJson(json);

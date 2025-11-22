@@ -9,10 +9,14 @@ part of 'categories_response.dart';
 CategoriesResponse _$CategoriesResponseFromJson(Map<String, dynamic> json) =>
     $checkedCreate('CategoriesResponse', json, ($checkedConvert) {
       final val = CategoriesResponse(
-        id: $checkedConvert('id', (v) => (v as num).toInt()),
-        name: $checkedConvert('name', (v) => v as String),
-        imageUrl: $checkedConvert('coverPictureUrl', (v) => v as String),
+        categories: $checkedConvert(
+          'categories',
+          (v) => (v as List<dynamic>)
+              .map(
+                (e) => CategoriesItemModel.fromJson(e as Map<String, dynamic>),
+              )
+              .toList(),
+        ),
       );
       return val;
-    }, fieldKeyMap: const {'imageUrl': 'coverPictureUrl'});
-
+    });
