@@ -30,8 +30,7 @@ class CategoriesBlocBuilder extends StatelessWidget {
                   6,
                   (index) => CategoriesItemModel(
                     name: 'Category Name',
-                    imageUrl:
-                        'https://upload.wikimedia.org/wikipedia/commons/c/c5/Gucci_logo.svg',
+                    imageUrl: '',
                     id: 'skeleton-$index',
                   ),
                 ),

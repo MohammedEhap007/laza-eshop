@@ -35,15 +35,22 @@ class CategoriesItem extends StatelessWidget {
                   : AppColors.mainLight,
               borderRadius: BorderRadius.circular(10.r),
             ),
-            child: SvgPicture.network(
-              categoriesItemModel.imageUrl,
-              placeholderBuilder: (context) => Image.asset(
-                AppAssets.iconsCategoriesLoadingIcon,
-                width: 20.sp,
-                height: 20.sp,
-              ),
-              fit: BoxFit.scaleDown,
-            ),
+            child: categoriesItemModel.imageUrl.isEmpty
+                ? Icon(
+                    Icons.category,
+                    size: 24.sp,
+                    color: Colors.grey,
+                  )
+                : SvgPicture.network(
+                    categoriesItemModel.imageUrl,
+                    placeholderBuilder: (context) => Image.asset(
+                      AppAssets.iconsCategoriesLoadingIcon,
+                      width: 24.sp,
+                      height: 24.sp,
+                    ),
+                    fit: BoxFit.scaleDown,
+                    allowDrawingOutsideViewBox: true,
+                  ),
           ),
           horizontalSpace(10),
           Text(
