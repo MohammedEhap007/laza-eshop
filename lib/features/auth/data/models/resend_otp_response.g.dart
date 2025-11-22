@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sign_up_response.dart';
+part of 'resend_otp_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SignUpResponse _$SignUpResponseFromJson(Map<String, dynamic> json) =>
-    $checkedCreate('SignUpResponse', json, ($checkedConvert) {
-      final val = SignUpResponse(
+ResendOtpResponse _$ResendOtpResponseFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('ResendOtpResponse', json, ($checkedConvert) {
+      final val = ResendOtpResponse(
         message: $checkedConvert('message', (v) => v as String),
       );
       return val;
