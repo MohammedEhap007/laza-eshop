@@ -16,6 +16,7 @@ class CategoriesRepo {
       return ApiResult.success(response);
     } catch (error) {
       AppLogger.error('Categories Repo Failed To Handle The Response');
+      AppLogger.error('Error details: $error');
       return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }

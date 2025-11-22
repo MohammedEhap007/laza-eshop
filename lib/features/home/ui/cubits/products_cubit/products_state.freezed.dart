@@ -55,11 +55,11 @@ extension ProductsStatePatterns<T> on ProductsState<T> {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial<T> value)?  initial,TResult Function( Loading<T> value)?  productsLoading,TResult Function( ProductsSuccess<T> value)?  productsSuccess,TResult Function( ProductsFailure<T> value)?  productsFailure,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial<T> value)?  initial,TResult Function( ProductsLoading<T> value)?  productsLoading,TResult Function( ProductsSuccess<T> value)?  productsSuccess,TResult Function( ProductsFailure<T> value)?  productsFailure,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case Loading() when productsLoading != null:
+return initial(_that);case ProductsLoading() when productsLoading != null:
 return productsLoading(_that);case ProductsSuccess() when productsSuccess != null:
 return productsSuccess(_that);case ProductsFailure() when productsFailure != null:
 return productsFailure(_that);case _:
@@ -80,11 +80,11 @@ return productsFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial<T> value)  initial,required TResult Function( Loading<T> value)  productsLoading,required TResult Function( ProductsSuccess<T> value)  productsSuccess,required TResult Function( ProductsFailure<T> value)  productsFailure,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial<T> value)  initial,required TResult Function( ProductsLoading<T> value)  productsLoading,required TResult Function( ProductsSuccess<T> value)  productsSuccess,required TResult Function( ProductsFailure<T> value)  productsFailure,}){
 final _that = this;
 switch (_that) {
 case _Initial():
-return initial(_that);case Loading():
+return initial(_that);case ProductsLoading():
 return productsLoading(_that);case ProductsSuccess():
 return productsSuccess(_that);case ProductsFailure():
 return productsFailure(_that);case _:
@@ -104,11 +104,11 @@ return productsFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial<T> value)?  initial,TResult? Function( Loading<T> value)?  productsLoading,TResult? Function( ProductsSuccess<T> value)?  productsSuccess,TResult? Function( ProductsFailure<T> value)?  productsFailure,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial<T> value)?  initial,TResult? Function( ProductsLoading<T> value)?  productsLoading,TResult? Function( ProductsSuccess<T> value)?  productsSuccess,TResult? Function( ProductsFailure<T> value)?  productsFailure,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case Loading() when productsLoading != null:
+return initial(_that);case ProductsLoading() when productsLoading != null:
 return productsLoading(_that);case ProductsSuccess() when productsSuccess != null:
 return productsSuccess(_that);case ProductsFailure() when productsFailure != null:
 return productsFailure(_that);case _:
@@ -131,7 +131,7 @@ return productsFailure(_that);case _:
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  productsLoading,TResult Function( ProductsResponse data)?  productsSuccess,TResult Function( ApiErrorModel apiErrorModel)?  productsFailure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial();case Loading() when productsLoading != null:
+return initial();case ProductsLoading() when productsLoading != null:
 return productsLoading();case ProductsSuccess() when productsSuccess != null:
 return productsSuccess(_that.data);case ProductsFailure() when productsFailure != null:
 return productsFailure(_that.apiErrorModel);case _:
@@ -155,7 +155,7 @@ return productsFailure(_that.apiErrorModel);case _:
 @optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  productsLoading,required TResult Function( ProductsResponse data)  productsSuccess,required TResult Function( ApiErrorModel apiErrorModel)  productsFailure,}) {final _that = this;
 switch (_that) {
 case _Initial():
-return initial();case Loading():
+return initial();case ProductsLoading():
 return productsLoading();case ProductsSuccess():
 return productsSuccess(_that.data);case ProductsFailure():
 return productsFailure(_that.apiErrorModel);case _:
@@ -178,7 +178,7 @@ return productsFailure(_that.apiErrorModel);case _:
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  productsLoading,TResult? Function( ProductsResponse data)?  productsSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  productsFailure,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial();case Loading() when productsLoading != null:
+return initial();case ProductsLoading() when productsLoading != null:
 return productsLoading();case ProductsSuccess() when productsSuccess != null:
 return productsSuccess(_that.data);case ProductsFailure() when productsFailure != null:
 return productsFailure(_that.apiErrorModel);case _:
@@ -224,8 +224,8 @@ String toString() {
 /// @nodoc
 
 
-class Loading<T> implements ProductsState<T> {
-  const Loading();
+class ProductsLoading<T> implements ProductsState<T> {
+  const ProductsLoading();
   
 
 
@@ -235,7 +235,7 @@ class Loading<T> implements ProductsState<T> {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Loading<T>);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductsLoading<T>);
 }
 
 

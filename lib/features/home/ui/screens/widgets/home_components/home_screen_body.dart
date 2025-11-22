@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:laza_eshop/core/di/dependency_injection.dart';
 import 'package:laza_eshop/core/helpers/spacing.dart';
 import 'package:laza_eshop/features/home/ui/screens/widgets/categories/categories_bar.dart';
 import 'package:laza_eshop/features/home/ui/screens/widgets/categories/categories_item.dart';
@@ -12,6 +14,8 @@ import 'package:laza_eshop/features/home/ui/screens/widgets/home_components/new_
 import 'package:laza_eshop/features/home/ui/screens/widgets/products/product_item.dart';
 import 'package:laza_eshop/features/home/ui/screens/widgets/home_components/search_section.dart';
 
+import '../../../cubits/products_cubit/products_cubit.dart';
+import '../products/products_bloc_builder.dart';
 import '../products/products_grid_view.dart';
 import '../products/products_grid_view_item.dart';
 
@@ -44,7 +48,10 @@ class HomeScreenBody extends StatelessWidget {
             ),
           ),
         ),
-        const ProductsGridView(),
+        BlocProvider(
+          create: (context) => getIt<ProductsCubit>()..getProducts(),
+          child: const ProductsBlocBuilder(),
+        ),
         SliverToBoxAdapter(
           child: verticalSpace(15),
         ),

@@ -17,5 +17,7 @@ abstract class HomeService {
   Future<CategoriesResponse> getCategories();
 
   @GET(ApiConstants.products)
-  Future<ProductsResponse> getProducts();
+  Future<ProductsResponse> getProducts(
+    @Body() Map<String, dynamic> body,
+  );
 }

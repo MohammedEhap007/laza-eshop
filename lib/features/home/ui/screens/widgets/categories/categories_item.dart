@@ -36,17 +36,15 @@ class CategoriesItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.r),
             ),
             child: categoriesItemModel.imageUrl.isEmpty
-                ? Icon(
-                    Icons.category,
-                    size: 24.sp,
-                    color: Colors.grey,
+                ? Image.asset(
+                    AppAssets.iconsCategoriesLoadingIcon,
+                    fit: BoxFit.cover,
                   )
                 : SvgPicture.network(
                     categoriesItemModel.imageUrl,
                     placeholderBuilder: (context) => Image.asset(
                       AppAssets.iconsCategoriesLoadingIcon,
-                      width: 24.sp,
-                      height: 24.sp,
+                      fit: BoxFit.cover,
                     ),
                     fit: BoxFit.scaleDown,
                     allowDrawingOutsideViewBox: true,

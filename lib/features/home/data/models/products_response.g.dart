@@ -13,7 +13,7 @@ ProductsResponse _$ProductsResponseFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         final val = ProductsResponse(
           products: $checkedConvert(
-            'products',
+            'items',
             (v) => (v as List<dynamic>)
                 .map(
                   (e) => ProductsItemModel.fromJson(e as Map<String, dynamic>),
@@ -29,6 +29,7 @@ ProductsResponse _$ProductsResponseFromJson(Map<String, dynamic> json) =>
         return val;
       },
       fieldKeyMap: const {
+        'products': 'items',
         'pageNumber': 'page',
         'hasNext': 'hasNextPage',
         'hasPrevious': 'hasPreviousPage',

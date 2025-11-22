@@ -59,7 +59,8 @@ dependencies:
   pinput: ^5.0.2
   # Loading Skeletons Library
   skeletonizer: ^2.1.0+1
-  
+  # For loading and caching network images
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:

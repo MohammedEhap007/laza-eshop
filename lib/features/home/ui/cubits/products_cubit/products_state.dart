@@ -7,7 +7,7 @@ part 'products_state.freezed.dart';
 @freezed
 class ProductsState<T> with _$ProductsState<T> {
   const factory ProductsState.initial() = _Initial;
-  const factory ProductsState.productsLoading() = Loading;
+  const factory ProductsState.productsLoading() = ProductsLoading;
   const factory ProductsState.productsSuccess(ProductsResponse data) =
       ProductsSuccess<T>;
   const factory ProductsState.productsFailure(ApiErrorModel apiErrorModel) =

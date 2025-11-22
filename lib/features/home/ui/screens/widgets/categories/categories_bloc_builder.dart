@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:laza_eshop/core/widgets/horizontal_failure_feedback_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import '../../../../../../core/helpers/spacing.dart';
+import '../../../../../../core/themes/app_colors.dart';
+import '../../../../../../core/themes/app_text_styles.dart';
 import '../../../../data/models/categories_item_model.dart';
 import '../../../../data/models/categories_response.dart';
 import '../../../cubits/categories_cubit/categories_cubit.dart';
@@ -40,8 +45,11 @@ class CategoriesBlocBuilder extends StatelessWidget {
           categoriesSuccess: (categoriesResponse) => CategoriesListView(
             categoriesResponse: categoriesResponse,
           ),
-          categoriesFailure: (errorMessage) => Center(
-            child: Text('Error: $errorMessage'),
+          categoriesFailure: (apiErrorModel) => HorizontalFailureFeedbackWidget(
+            apiErrorModel: apiErrorModel,
+            onRetry: () {
+              context.read<CategoriesCubit>().getCategories();
+            },
           ),
           orElse: () => const SizedBox.shrink(),
         );

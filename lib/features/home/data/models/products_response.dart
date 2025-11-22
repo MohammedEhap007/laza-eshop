@@ -6,15 +6,16 @@ part 'products_response.g.dart';
 
 @JsonSerializable(checked: true)
 class ProductsResponse {
-  final List<ProductsItemModel> products;
+  @JsonKey(name: 'items')
+  final List<ProductsItemModel>? products;
   @JsonKey(name: 'page')
-  final int pageNumber;
-  final int pageSize;
-  final int totalCount;
+  final int? pageNumber;
+  final int? pageSize;
+  final int? totalCount;
   @JsonKey(name: 'hasNextPage')
-  final bool hasNext;
+  final bool? hasNext;
   @JsonKey(name: 'hasPreviousPage')
-  final bool hasPrevious;
+  final bool? hasPrevious;
 
   ProductsResponse({
     required this.products,
