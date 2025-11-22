@@ -5,6 +5,7 @@ import 'package:retrofit/http.dart';
 
 import '../models/categories_item_model.dart';
 import '../models/categories_response.dart';
+import '../models/products_response.dart';
 
 part 'home_service.g.dart';
 
@@ -14,4 +15,7 @@ abstract class HomeService {
 
   @GET(ApiConstants.categories)
   Future<CategoriesResponse> getCategories();
+
+  @GET(ApiConstants.products)
+  Future<ProductsResponse> getProducts();
 }
