@@ -50,19 +50,18 @@ class CustomHomeScreenDrawer extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                BlocBuilder<ThemeCubit, ThemeState>(
-                  builder: (context, state) {
-                    final themeCubit = context.read<ThemeCubit>();
-                    final isDark =
-                        themeCubit.currentTheme == ThemeModeState.dark;
-
-                    return Switch(
-                      value: isDark,
-                      onChanged: (bool value) {
-                        themeCubit.selectTheme(
-                          value ? ThemeModeState.dark : ThemeModeState.light,
-                        );
-                      },
+                Switch(
+                  value:
+                      // check if the current theme is dark mode
+                      context.read<ThemeCubit>().currentTheme ==
+                          ThemeModeState.dark ||
+                      // if the current theme is system and the device is in dark mode
+                      (context.read<ThemeCubit>().currentTheme ==
+                              ThemeModeState.system &&
+                          context.isDarkMode()),
+                  onChanged: (bool value) {
+                    context.read<ThemeCubit>().selectTheme(
+                      value ? ThemeModeState.dark : ThemeModeState.light,
                     );
                   },
                 ),
