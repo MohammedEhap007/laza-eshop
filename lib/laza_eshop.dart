@@ -19,20 +19,24 @@ class LazaEshop extends StatelessWidget {
       minTextAdapt: true,
       child: BlocProvider(
         create: (context) => ThemeCubit(),
-        child: MaterialApp(
-          title: 'Laza Eshop',
-          theme: lightTheme,
-          darkTheme: darkTheme,
-          themeMode: context.read<ThemeCubit>().getTheme(),
-          themeAnimationDuration: const Duration(milliseconds: 500),
-          themeAnimationCurve: Curves.easeInOut,
-          onGenerateRoute: AppRouter().onGenerateRoute,
-          initialRoute: isOnboardingSeen
-              ? isLoggedIn
-                    ? Routes.mainScreen
-                    : Routes.loginScreen
-              : Routes.onBoardingScreen,
-          debugShowCheckedModeBanner: false,
+        child: BlocBuilder<ThemeCubit, ThemeState>(
+          builder: (context, state) {
+            return MaterialApp(
+              title: 'Laza Eshop',
+              theme: lightTheme,
+              darkTheme: darkTheme,
+              themeMode: context.read<ThemeCubit>().getTheme(),
+              themeAnimationDuration: const Duration(milliseconds: 350),
+              themeAnimationCurve: Curves.easeInOut,
+              onGenerateRoute: AppRouter().onGenerateRoute,
+              initialRoute: isOnboardingSeen
+                  ? isLoggedIn
+                        ? Routes.mainScreen
+                        : Routes.loginScreen
+                  : Routes.onBoardingScreen,
+              debugShowCheckedModeBanner: false,
+            );
+          },
         ),
       ),
     );

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../../core/cubits/theme_cubit.dart';
+import '../../../../../../core/enums/theme_mode_state_enum.dart';
 import '../../../../../../core/helpers/spacing.dart';
 import '../../../../../../core/themes/app_assets.dart';
 import '../../../../../../core/themes/app_colors.dart';
@@ -47,9 +50,21 @@ class CustomHomeScreenDrawer extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                Switch(
-                  value: false,
-                  onChanged: (bool value) {},
+                BlocBuilder<ThemeCubit, ThemeState>(
+                  builder: (context, state) {
+                    final themeCubit = context.read<ThemeCubit>();
+                    final isDark =
+                        themeCubit.currentTheme == ThemeModeState.dark;
+
+                    return Switch(
+                      value: isDark,
+                      onChanged: (bool value) {
+                        themeCubit.selectTheme(
+                          value ? ThemeModeState.dark : ThemeModeState.light,
+                        );
+                      },
+                    );
+                  },
                 ),
               ],
             ),
