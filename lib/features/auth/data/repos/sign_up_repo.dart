@@ -1,10 +1,9 @@
-import 'package:laza_eshop/features/auth/data/services/auth_service.dart';
-
 import '../../../../core/apis/api_error_handler.dart';
 import '../../../../core/apis/api_result.dart';
 import '../../../../core/utils/app_logger.dart';
 import '../models/sign_up_request_body.dart';
 import '../models/sign_up_response.dart';
+import '../services/auth_service.dart';
 
 class SignUpRepo {
   final AuthService _authService;

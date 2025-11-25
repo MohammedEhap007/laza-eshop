@@ -1,10 +1,8 @@
-import 'package:laza_eshop/core/apis/api_result.dart';
-import 'package:laza_eshop/features/home/data/services/home_service.dart';
-
 import '../../../../core/apis/api_error_handler.dart';
+import '../../../../core/apis/api_result.dart';
 import '../../../../core/utils/app_logger.dart';
-import '../models/categories_item_model.dart';
 import '../models/categories_response.dart';
+import '../services/home_service.dart';
 
 class CategoriesRepo {
   final HomeService _homeService;

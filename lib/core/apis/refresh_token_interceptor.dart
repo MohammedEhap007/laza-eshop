@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 
 import '../../features/auth/data/models/refresh_token_request_body.dart';
-import '../../features/auth/data/models/refresh_token_response.dart';
 import '../../features/auth/data/services/auth_service.dart';
 import '../helpers/cache_helper.dart';
 import '../helpers/cache_helper_keys.dart';

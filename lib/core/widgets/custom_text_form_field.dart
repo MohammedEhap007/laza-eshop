@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../themes/app_colors.dart';
 import '../themes/app_text_styles.dart';
-import '../utils/app_extensions.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
@@ -107,15 +106,13 @@ class CustomTextFormField extends StatelessWidget {
         suffixIcon: suffixIcon,
         fillColor:
             backgroundColor ??
-            (context.isDarkMode()
-                ? AppColors.lighterDark
-                : AppColors.darkerLight),
+            Theme.of(context).colorScheme.surfaceContainerHighest,
         filled: true,
       ),
       obscureText: isObscureText ?? false,
       obscuringCharacter: '*',
       style: AppTextStyles.font14Medium.copyWith(
-        color: context.isDarkMode() ? AppColors.white : AppColors.black,
+        color: Theme.of(context).colorScheme.onSurface,
       ),
       validator: (value) {
         return validator(value);

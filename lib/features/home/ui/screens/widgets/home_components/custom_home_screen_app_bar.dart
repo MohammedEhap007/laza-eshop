@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:laza_eshop/core/themes/app_assets.dart';
-import 'package:laza_eshop/core/themes/app_colors.dart';
-import 'package:laza_eshop/core/utils/app_extensions.dart';
+import '../../../../../../core/themes/app_assets.dart';
+import '../../../../../../core/themes/app_colors.dart';
+import '../../../../../../core/utils/app_extensions.dart';
 
 class CustomHomeScreenAppBar extends StatelessWidget {
   const CustomHomeScreenAppBar({super.key});
@@ -14,9 +14,9 @@ class CustomHomeScreenAppBar extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 22.5.r,
-          backgroundColor: context.isDarkMode()
-              ? AppColors.lightDark
-              : AppColors.darkerLight,
+          backgroundColor: Theme.of(
+            context,
+          ).colorScheme.surfaceContainerHighest,
           child: IconButton(
             onPressed: () {
               Scaffold.of(context).openDrawer();
@@ -27,7 +27,7 @@ class CustomHomeScreenAppBar extends StatelessWidget {
               height: 25.h,
               fit: BoxFit.scaleDown,
               colorFilter: ColorFilter.mode(
-                context.isDarkMode() ? AppColors.white : AppColors.black,
+                Theme.of(context).colorScheme.onSurface,
                 BlendMode.srcIn,
               ),
             ),
@@ -36,9 +36,9 @@ class CustomHomeScreenAppBar extends StatelessWidget {
         const Spacer(),
         CircleAvatar(
           radius: 22.5.r,
-          backgroundColor: context.isDarkMode()
-              ? AppColors.lightDark
-              : AppColors.darkerLight,
+          backgroundColor: Theme.of(
+            context,
+          ).colorScheme.surfaceContainerHighest,
           child: IconButton(
             onPressed: () {},
             icon: SvgPicture.asset(
@@ -47,7 +47,7 @@ class CustomHomeScreenAppBar extends StatelessWidget {
               fit: BoxFit.scaleDown,
               AppAssets.iconsCartIcon,
               colorFilter: ColorFilter.mode(
-                context.isDarkMode() ? AppColors.white : AppColors.black,
+                Theme.of(context).colorScheme.onSurface,
                 BlendMode.srcIn,
               ),
             ),

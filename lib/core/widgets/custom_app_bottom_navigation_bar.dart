@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:laza_eshop/core/utils/app_extensions.dart';
 
 import '../themes/app_assets.dart';
 import '../themes/app_colors.dart';
 import '../themes/app_text_styles.dart';
+import '../utils/app_extensions.dart';
 
 class CustomAppBottomNavigationBar extends StatefulWidget {
   const CustomAppBottomNavigationBar({super.key, required this.onItemTapped});

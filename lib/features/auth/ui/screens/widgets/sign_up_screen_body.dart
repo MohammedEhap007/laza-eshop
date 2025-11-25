@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:laza_eshop/features/auth/ui/cubits/sign_up_cubit/sign_up_cubit.dart';
-import 'package:laza_eshop/features/auth/ui/screens/widgets/sign_up_bloc_listener.dart';
-import 'package:laza_eshop/features/auth/ui/screens/widgets/sign_up_form.dart';
+import '../../cubits/sign_up_cubit/sign_up_cubit.dart';
+import 'sign_up_bloc_listener.dart';
+import 'sign_up_form.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/widgets/custom_app_bar.dart';

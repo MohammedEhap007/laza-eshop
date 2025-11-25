@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:laza_eshop/core/apis/api_result.dart';
-import 'package:laza_eshop/core/utils/app_logger.dart';
-import 'package:laza_eshop/features/home/data/models/products_response.dart';
-import 'package:laza_eshop/features/home/data/repos/products_repo.dart';
+import '../../../../../core/apis/api_result.dart';
+import '../../../../../core/utils/app_logger.dart';
+import '../../../data/models/products_response.dart';
+import '../../../data/repos/products_repo.dart';
 
 import 'products_state.dart';
 
@@ -14,7 +14,9 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   void getProducts() async {
     emit(const ProductsState.productsLoading());
-    final response = await _productsRepo.getProducts({});
+    final response = await _productsRepo.getProducts({
+      'page': 1,
+    });
     response.when(
       success: (ProductsResponse productsResponse) {
         emit(ProductsState.productsSuccess(productsResponse));

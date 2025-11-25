@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:laza_eshop/core/apis/api_error_handler.dart';
-import 'package:laza_eshop/core/apis/api_error_model.dart';
-import 'package:laza_eshop/features/auth/data/models/resend_otp_response.dart';
+import '../../../../../core/apis/api_error_handler.dart';
+import '../../../../../core/apis/api_error_model.dart';
+import '../../../data/models/resend_otp_response.dart';
 
 part 'resend_otp_state.freezed.dart';
 

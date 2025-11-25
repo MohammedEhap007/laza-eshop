@@ -26,9 +26,7 @@ void showErrorDialog(BuildContext context, ApiErrorModel apiErrorModel) {
             padding: EdgeInsets.all(24.w),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16.r),
-              color: context.isDarkMode()
-                  ? AppColors.mainDark
-                  : AppColors.mainLight,
+              color: Theme.of(context).colorScheme.surface,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -55,9 +53,7 @@ void showErrorDialog(BuildContext context, ApiErrorModel apiErrorModel) {
                 Text(
                   apiErrorModel.message ?? 'An error occurred',
                   style: AppTextStyles.font22SemiBold.copyWith(
-                    color: context.isDarkMode()
-                        ? AppColors.white
-                        : AppColors.black,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -66,14 +62,14 @@ void showErrorDialog(BuildContext context, ApiErrorModel apiErrorModel) {
                   Container(
                     padding: EdgeInsets.all(16.w),
                     decoration: BoxDecoration(
-                      color: context.isDarkMode()
-                          ? AppColors.lightDark
-                          : AppColors.darkerLight,
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.surfaceContainerHighest,
                       borderRadius: BorderRadius.circular(12.r),
                       border: Border.all(
-                        color: context.isDarkMode()
-                            ? AppColors.lightDark
-                            : AppColors.darkerLight,
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.surfaceContainerHighest,
                         width: 1.w,
                       ),
                     ),
@@ -106,11 +102,10 @@ void showErrorDialog(BuildContext context, ApiErrorModel apiErrorModel) {
                                 Text(
                                   '- ',
                                   style: AppTextStyles.font14Regular.copyWith(
-                                    color: context.isDarkMode()
-                                        ? AppColors.white.withValues(alpha: 0.8)
-                                        : AppColors.black.withValues(
-                                            alpha: 0.8,
-                                          ),
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface
+                                        .withValues(alpha: 0.8),
                                     height: 1.4,
                                   ),
                                 ),
@@ -118,13 +113,10 @@ void showErrorDialog(BuildContext context, ApiErrorModel apiErrorModel) {
                                   child: Text(
                                     errorDetail,
                                     style: AppTextStyles.font14Regular.copyWith(
-                                      color: context.isDarkMode()
-                                          ? AppColors.white.withValues(
-                                              alpha: 0.8,
-                                            )
-                                          : AppColors.black.withValues(
-                                              alpha: 0.8,
-                                            ),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSurface
+                                          .withValues(alpha: 0.8),
                                       height: 1.4,
                                     ),
                                   ),

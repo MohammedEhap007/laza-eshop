@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:laza_eshop/core/utils/app_extensions.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../../../../core/themes/app_colors.dart';
@@ -37,12 +36,10 @@ class OtpFields extends StatelessWidget {
           width: 55.w,
           height: 75.h,
           textStyle: AppTextStyles.font22Medium.copyWith(
-            color: context.isDarkMode() ? AppColors.white : AppColors.black,
+            color: Theme.of(context).colorScheme.onSurface,
           ),
           decoration: BoxDecoration(
-            color: context.isDarkMode()
-                ? AppColors.lighterDark
-                : AppColors.darkerLight,
+            color: Theme.of(context).colorScheme.surfaceContainerHighest,
             border: BoxBorder.all(color: const Color(0xFFE7E8EA)),
             borderRadius: BorderRadius.circular(10.r),
           ),
@@ -51,12 +48,10 @@ class OtpFields extends StatelessWidget {
           width: 55.w,
           height: 75.h,
           textStyle: AppTextStyles.font22Medium.copyWith(
-            color: context.isDarkMode() ? AppColors.white : AppColors.black,
+            color: Theme.of(context).colorScheme.onSurface,
           ),
           decoration: BoxDecoration(
-            color: context.isDarkMode()
-                ? AppColors.lighterDark
-                : AppColors.darkerLight,
+            color: Theme.of(context).colorScheme.surfaceContainerHighest,
             border: BoxBorder.all(color: AppColors.purple),
             borderRadius: BorderRadius.circular(16.r),
           ),
@@ -65,12 +60,10 @@ class OtpFields extends StatelessWidget {
           width: 55.w,
           height: 75.h,
           textStyle: AppTextStyles.font22Medium.copyWith(
-            color: context.isDarkMode() ? AppColors.white : AppColors.black,
+            color: Theme.of(context).colorScheme.onSurface,
           ),
           decoration: BoxDecoration(
-            color: context.isDarkMode()
-                ? AppColors.lighterDark
-                : AppColors.darkerLight,
+            color: Theme.of(context).colorScheme.surfaceContainerHighest,
             border: BoxBorder.all(color: AppColors.red),
             borderRadius: BorderRadius.circular(10.r),
           ),

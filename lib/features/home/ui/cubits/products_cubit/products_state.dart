@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:laza_eshop/core/apis/api_error_model.dart';
-import 'package:laza_eshop/features/home/data/models/products_response.dart';
+import '../../../../../core/apis/api_error_model.dart';
+import '../../../data/models/products_response.dart';
 
 part 'products_state.freezed.dart';
 

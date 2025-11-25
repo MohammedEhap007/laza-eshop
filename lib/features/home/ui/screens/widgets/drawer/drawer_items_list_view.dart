@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:laza_eshop/core/themes/app_assets.dart';
-import 'package:laza_eshop/features/home/data/models/drawer_item_model.dart';
+import '../../../../../../core/themes/app_assets.dart';
+import '../../../../data/models/drawer_item_model.dart';
 
 import 'drawer_item.dart';
 

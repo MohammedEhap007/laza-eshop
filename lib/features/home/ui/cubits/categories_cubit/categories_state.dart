@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:laza_eshop/core/apis/api_error_model.dart';
+import '../../../../../core/apis/api_error_model.dart';
 import '../../../data/models/categories_response.dart';
 
 part 'categories_state.freezed.dart';

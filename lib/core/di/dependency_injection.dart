@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:laza_eshop/features/home/data/services/home_service.dart';
+import '../../features/home/data/services/home_service.dart';
 
 import '../../features/auth/data/repos/resend_otp_repo.dart';
 import '../../features/auth/data/repos/sign_up_repo.dart';

@@ -41,7 +41,7 @@ class _OnboardingBoxState extends State<OnboardingBox> {
           Text(
             'Look Good, Feel Good',
             style: AppTextStyles.font24SemiBold.copyWith(
-              color: context.isDarkMode() ? AppColors.white : AppColors.black,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           verticalSpace(10),

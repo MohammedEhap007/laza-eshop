@@ -29,9 +29,7 @@ void showSuccessDialog(
             padding: EdgeInsets.all(24.w),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16.r),
-              color: context.isDarkMode()
-                  ? AppColors.mainDark
-                  : AppColors.mainLight,
+              color: Theme.of(context).colorScheme.surface,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -58,9 +56,7 @@ void showSuccessDialog(
                 Text(
                   'Success!',
                   style: AppTextStyles.font22SemiBold.copyWith(
-                    color: context.isDarkMode()
-                        ? AppColors.white
-                        : AppColors.black,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                   textAlign: TextAlign.center,
                 ),
