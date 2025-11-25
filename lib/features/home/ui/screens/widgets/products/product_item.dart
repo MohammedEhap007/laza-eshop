@@ -2,10 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../../../core/themes/app_assets.dart';
 import '../../../../../../core/themes/app_colors.dart';
 import '../../../../../../core/utils/app_extensions.dart';
-
 import '../../../../data/models/products_item_model.dart';
 
 class ProductItem extends StatelessWidget {

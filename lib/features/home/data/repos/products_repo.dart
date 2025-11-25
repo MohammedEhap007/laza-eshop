@@ -1,8 +1,6 @@
 import '../../../../core/apis/api_error_handler.dart';
-import '../../../../core/apis/api_error_model.dart';
 import '../../../../core/apis/api_result.dart';
 import '../../../../core/utils/app_logger.dart';
-
 import '../models/products_response.dart';
 import '../services/home_service.dart';
 

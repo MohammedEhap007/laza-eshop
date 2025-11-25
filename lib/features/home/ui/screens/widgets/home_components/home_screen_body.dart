@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../../../core/di/dependency_injection.dart';
 import '../../../../../../core/helpers/spacing.dart';
-import '../categories/categories_bar.dart';
-import '../categories/categories_item.dart';
-import '../categories/categories_list_view.dart';
-import '../categories/categories_section.dart';
-import 'custom_home_screen_app_bar.dart';
-import 'custom_search_button.dart';
-import 'hello_text.dart';
-import 'custom_search_bar.dart';
-import 'new_arrival_bar.dart';
-import '../products/product_item.dart';
-import 'search_section.dart';
-
 import '../../../cubits/products_cubit/products_cubit.dart';
+import '../categories/categories_section.dart';
 import '../products/products_bloc_builder.dart';
-import '../products/products_grid_view.dart';
-import '../products/products_grid_view_item.dart';
+import 'custom_home_screen_app_bar.dart';
+import 'hello_text.dart';
+import 'new_arrival_bar.dart';
+import 'search_section.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});

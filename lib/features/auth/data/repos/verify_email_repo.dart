@@ -1,10 +1,9 @@
+import '../../../../core/apis/api_error_handler.dart';
 import '../../../../core/apis/api_result.dart';
 import '../../../../core/utils/app_logger.dart';
+import '../models/verify_email_request_body.dart';
 import '../models/verify_email_response.dart';
 import '../services/auth_service.dart';
-
-import '../../../../core/apis/api_error_handler.dart';
-import '../models/verify_email_request_body.dart';
 
 class VerifyEmailRepo {
   final AuthService _authService;

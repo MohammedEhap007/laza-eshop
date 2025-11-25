@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/cubits/theme_cubit.dart';
 import 'core/helpers/cache_helper_checks.dart';
 import 'core/routes/app_router.dart';
 import 'core/routes/routes.dart';
@@ -15,17 +17,23 @@ class LazaEshop extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
-      child: MaterialApp(
-        title: 'Laza Eshop',
-        theme: lightTheme,
-        darkTheme: darkTheme,
-        onGenerateRoute: AppRouter().onGenerateRoute,
-        initialRoute: isOnboardingSeen
-            ? isLoggedIn
-                  ? Routes.mainScreen
-                  : Routes.loginScreen
-            : Routes.onBoardingScreen,
-        debugShowCheckedModeBanner: false,
+      child: BlocProvider(
+        create: (context) => ThemeCubit(),
+        child: MaterialApp(
+          title: 'Laza Eshop',
+          theme: lightTheme,
+          darkTheme: darkTheme,
+          themeMode: context.read<ThemeCubit>().getTheme(),
+          themeAnimationDuration: const Duration(milliseconds: 500),
+          themeAnimationCurve: Curves.easeInOut,
+          onGenerateRoute: AppRouter().onGenerateRoute,
+          initialRoute: isOnboardingSeen
+              ? isLoggedIn
+                    ? Routes.mainScreen
+                    : Routes.loginScreen
+              : Routes.onBoardingScreen,
+          debugShowCheckedModeBanner: false,
+        ),
       ),
     );
   }

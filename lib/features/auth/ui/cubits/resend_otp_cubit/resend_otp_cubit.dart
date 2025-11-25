@@ -1,10 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../../core/apis/api_result.dart';
 import '../../../data/models/resend_otp_request_body.dart';
 import '../../../data/models/resend_otp_response.dart';
 import '../../../data/repos/resend_otp_repo.dart';
-
 import 'resend_otp_state.dart';
 
 class ResendOtpCubit extends Cubit<ResendOtpState> {

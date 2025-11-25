@@ -1,9 +1,8 @@
-import '../../../../core/apis/api_result.dart';
-import '../models/resend_otp_response.dart';
-
 import '../../../../core/apis/api_error_handler.dart';
+import '../../../../core/apis/api_result.dart';
 import '../../../../core/utils/app_logger.dart';
 import '../models/resend_otp_request_body.dart';
+import '../models/resend_otp_response.dart';
 import '../services/auth_service.dart';
 
 class ResendOtpRepo {

@@ -2,26 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '../../../../../core/di/dependency_injection.dart';
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/themes/app_assets.dart';
-import '../../../../../core/themes/app_colors.dart';
-import '../../../../../core/themes/app_text_styles.dart';
-import '../../../../../core/utils/app_extensions.dart';
-import '../../../../../core/utils/app_logger.dart';
 import '../../../../../core/widgets/custom_app_bar.dart';
 import '../../../../../core/widgets/custom_blur_text.dart';
-import '../../cubits/resend_otp_cubit/resend_otp_cubit.dart';
-import 'otp_fields.dart';
-import 'resend_otp_bloc_listener.dart';
-import 'verification_code_bloc_listener.dart';
-import 'package:pinput/pinput.dart';
-
 import '../../../../../core/widgets/custom_text_button.dart';
 import '../../../data/repos/resend_otp_repo.dart';
+import '../../cubits/resend_otp_cubit/resend_otp_cubit.dart';
 import '../../cubits/verify_email_cubit/verify_email_cubit.dart';
 import '../../cubits/verify_email_cubit/verify_email_state.dart';
+import 'otp_fields.dart';
 import 'resend_code_text.dart';
+import 'resend_otp_bloc_listener.dart';
+import 'verification_code_bloc_listener.dart';
 
 class VerificationCodeScreenBody extends StatefulWidget {
   final String email;

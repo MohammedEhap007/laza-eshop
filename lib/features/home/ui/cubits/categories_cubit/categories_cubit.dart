@@ -1,10 +1,8 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../../core/apis/api_result.dart';
 import '../../../data/models/categories_response.dart';
 import '../../../data/repos/categories_repo.dart';
-
 import 'categories_state.dart';
 
 class CategoriesCubit extends Cubit<CategoriesState> {

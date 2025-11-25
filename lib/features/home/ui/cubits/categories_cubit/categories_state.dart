@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../../../core/apis/api_error_model.dart';
 import '../../../data/models/categories_response.dart';
 

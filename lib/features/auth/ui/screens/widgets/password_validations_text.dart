@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/themes/app_colors.dart';
-import '../../../../../core/themes/app_text_styles.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import 'validation_row.dart';
