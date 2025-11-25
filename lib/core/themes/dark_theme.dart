@@ -19,8 +19,37 @@ ThemeData darkTheme = ThemeData(
   ),
   hintColor: AppColors.gray,
   colorScheme: const ColorScheme.dark(
-    primary: AppColors.mainDark,
+    primary: AppColors.purple,
+    onPrimary: AppColors.white,
+
     secondary: AppColors.purple,
-    error: AppColors.red,
+    onSecondary: AppColors.white,
+
+    surface: AppColors.mainDark,
+    onSurface: AppColors.white,
+
+    surfaceContainerHighest: AppColors.lighterDark,
+
+    error: AppColors.lightRed,
+    onError: AppColors.white,
+
+    outline: AppColors.gray,
   ),
+
+  cardTheme: const CardThemeData(
+    color: AppColors.lightDark,
+    elevation: 0,
+  ),
+
+  textTheme: const TextTheme(
+    bodyLarge: TextStyle(color: AppColors.white),
+    bodyMedium: TextStyle(color: AppColors.white),
+    bodySmall: TextStyle(color: AppColors.gray),
+  ),
+
+  iconTheme: const IconThemeData(
+    color: AppColors.white,
+  ),
+
+  dividerColor: AppColors.gray.withValues(alpha: 0.2),
 );

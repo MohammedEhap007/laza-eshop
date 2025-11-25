@@ -25,7 +25,7 @@ class DontHaveAnAccountText extends StatelessWidget {
               },
             text: 'Sign Up',
             style: AppTextStyles.font14Medium.copyWith(
-              color: context.isDarkMode() ? AppColors.white : AppColors.black,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
         ],

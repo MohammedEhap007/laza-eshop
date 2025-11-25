@@ -1,7 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:laza_eshop/features/auth/data/models/sign_up_response.dart';
-import 'package:laza_eshop/features/auth/data/models/verify_email_request_body.dart';
-import 'package:laza_eshop/features/auth/data/models/verify_email_response.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
@@ -12,6 +9,8 @@ import '../models/refresh_token_request_body.dart';
 import '../models/refresh_token_response.dart';
 import '../models/resend_otp_request_body.dart';
 import '../models/sign_up_request_body.dart';
+import '../models/sign_up_response.dart';
+import '../models/verify_email_request_body.dart';
 
 part 'auth_service.g.dart';
 

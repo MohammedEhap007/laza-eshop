@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:laza_eshop/core/apis/api_error_model.dart';
-import 'package:laza_eshop/core/helpers/spacing.dart';
-import 'package:laza_eshop/core/themes/app_colors.dart';
-import 'package:laza_eshop/core/themes/app_text_styles.dart';
+import '../apis/api_error_model.dart';
+import '../helpers/spacing.dart';
+import '../themes/app_colors.dart';
+import '../themes/app_text_styles.dart';
 
 class HorizontalFailureFeedbackWidget extends StatelessWidget {
   const HorizontalFailureFeedbackWidget({

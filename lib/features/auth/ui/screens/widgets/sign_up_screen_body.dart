@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:laza_eshop/features/auth/ui/cubits/sign_up_cubit/sign_up_cubit.dart';
-import 'package:laza_eshop/features/auth/ui/screens/widgets/sign_up_bloc_listener.dart';
-import 'package:laza_eshop/features/auth/ui/screens/widgets/sign_up_form.dart';
 
 import '../../../../../core/helpers/spacing.dart';
 import '../../../../../core/widgets/custom_app_bar.dart';
 import '../../../../../core/widgets/custom_blur_text.dart';
 import '../../../../../core/widgets/custom_text_button.dart';
-import '../../../../../core/widgets/custom_text_form_field.dart';
-
+import '../../cubits/sign_up_cubit/sign_up_cubit.dart';
 import '../../cubits/sign_up_cubit/sign_up_state.dart';
-import 'password_validations_text.dart';
+import 'sign_up_bloc_listener.dart';
+import 'sign_up_form.dart';
 import 'terms_and_conditions_text.dart';
 
 class SignUpScreenBody extends StatefulWidget {

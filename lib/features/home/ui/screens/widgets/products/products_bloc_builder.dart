@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:laza_eshop/core/widgets/vertical_failure_feedback_widget.dart';
-import 'package:laza_eshop/features/home/data/models/products_response.dart';
-import 'package:laza_eshop/features/home/ui/cubits/categories_cubit/categories_cubit.dart';
-import 'package:laza_eshop/features/home/ui/cubits/products_cubit/products_cubit.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import '../../../../../../core/widgets/vertical_failure_feedback_widget.dart';
 import '../../../../data/models/products_item_model.dart';
+import '../../../../data/models/products_response.dart';
+import '../../../cubits/products_cubit/products_cubit.dart';
 import '../../../cubits/products_cubit/products_state.dart';
 import 'products_grid_view.dart';
 

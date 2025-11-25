@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../themes/app_assets.dart';
-import '../themes/app_colors.dart';
 import '../themes/app_text_styles.dart';
 import '../utils/app_extensions.dart';
 
@@ -19,9 +18,7 @@ class CustomAppBar extends StatelessWidget {
         style: AppTextStyles.font16SemiBold,
       ),
       leading: CircleAvatar(
-        backgroundColor: context.isDarkMode()
-            ? AppColors.lightDark
-            : AppColors.darkerLight,
+        backgroundColor: Theme.of(context).colorScheme.surfaceContainerHighest,
         child: IconButton(
           padding: const EdgeInsets.all(10.0),
           icon: context.isDarkMode()

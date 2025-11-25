@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:laza_eshop/core/utils/app_extensions.dart';
+import '../../../../../../core/utils/app_extensions.dart';
 
 import '../../../../../../core/helpers/spacing.dart';
 import '../../../../../../core/themes/app_assets.dart';

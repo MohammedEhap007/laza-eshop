@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/themes/app_colors.dart';
 import '../../../../../core/themes/app_text_styles.dart';
-import '../../../../../core/utils/app_extensions.dart';
 
 class TermsAndConditionsText extends StatelessWidget {
   const TermsAndConditionsText({super.key});
@@ -22,7 +21,7 @@ class TermsAndConditionsText extends StatelessWidget {
             text: 'Terms & Conditions',
             // You can add recognizer here for tap events if needed
             style: AppTextStyles.font12Medium.copyWith(
-              color: context.isDarkMode() ? AppColors.white : AppColors.black,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
         ],

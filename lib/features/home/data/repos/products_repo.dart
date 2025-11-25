@@ -1,8 +1,6 @@
-import 'package:laza_eshop/core/apis/api_error_handler.dart';
-import 'package:laza_eshop/core/apis/api_error_model.dart';
-import 'package:laza_eshop/core/apis/api_result.dart';
-import 'package:laza_eshop/core/utils/app_logger.dart';
-
+import '../../../../core/apis/api_error_handler.dart';
+import '../../../../core/apis/api_result.dart';
+import '../../../../core/utils/app_logger.dart';
 import '../models/products_response.dart';
 import '../services/home_service.dart';
 

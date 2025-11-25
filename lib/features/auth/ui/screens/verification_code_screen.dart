@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:laza_eshop/features/auth/ui/screens/widgets/verification_code_screen_body.dart';
+
+import 'widgets/verification_code_screen_body.dart';
 
 class VerificationCodeScreen extends StatelessWidget {
   final String email;

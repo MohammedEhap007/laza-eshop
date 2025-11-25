@@ -1,10 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:laza_eshop/core/apis/api_result.dart';
-import 'package:laza_eshop/features/auth/data/repos/sign_up_repo.dart';
 
+import '../../../../../core/apis/api_result.dart';
 import '../../../data/models/sign_up_request_body.dart';
 import '../../../data/models/sign_up_response.dart';
+import '../../../data/repos/sign_up_repo.dart';
 import 'sign_up_state.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {

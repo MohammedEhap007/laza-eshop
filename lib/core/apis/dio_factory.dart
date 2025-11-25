@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:laza_eshop/core/di/dependency_injection.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../../features/auth/data/services/auth_service.dart';
+import '../di/dependency_injection.dart';
 import 'refresh_token_interceptor.dart';
 
 class DioFactory {

@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:laza_eshop/core/di/dependency_injection.dart';
-import 'package:laza_eshop/core/helpers/spacing.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/categories/categories_bar.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/categories/categories_item.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/categories/categories_list_view.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/categories/categories_section.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/home_components/custom_home_screen_app_bar.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/home_components/custom_search_button.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/home_components/hello_text.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/home_components/custom_search_bar.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/home_components/new_arrival_bar.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/products/product_item.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/home_components/search_section.dart';
 
+import '../../../../../../core/di/dependency_injection.dart';
+import '../../../../../../core/helpers/spacing.dart';
 import '../../../cubits/products_cubit/products_cubit.dart';
+import '../categories/categories_section.dart';
 import '../products/products_bloc_builder.dart';
-import '../products/products_grid_view.dart';
-import '../products/products_grid_view_item.dart';
+import 'custom_home_screen_app_bar.dart';
+import 'hello_text.dart';
+import 'new_arrival_bar.dart';
+import 'search_section.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});

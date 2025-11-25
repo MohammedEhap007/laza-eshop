@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:laza_eshop/features/auth/ui/cubits/sign_up_cubit/sign_up_cubit.dart';
+import '../../features/auth/ui/cubits/sign_up_cubit/sign_up_cubit.dart';
 
 import '../../features/auth/ui/cubits/login_cubit/login_cubit.dart';
 import '../../features/auth/ui/cubits/verify_email_cubit/verify_email_cubit.dart';
