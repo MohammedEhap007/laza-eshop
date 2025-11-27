@@ -26,8 +26,8 @@ class LazaEshop extends StatelessWidget {
               theme: lightTheme,
               darkTheme: darkTheme,
               themeMode: context.read<ThemeCubit>().getTheme(),
-              themeAnimationDuration: const Duration(milliseconds: 350),
-              themeAnimationCurve: Curves.easeInOut,
+              themeAnimationDuration: const Duration(milliseconds: 300),
+              themeAnimationCurve: Curves.easeInOutCubic,
               onGenerateRoute: AppRouter().onGenerateRoute,
               initialRoute: isOnboardingSeen
                   ? isLoggedIn
