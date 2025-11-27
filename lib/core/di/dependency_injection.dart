@@ -1,18 +1,18 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import '../../features/home/data/services/home_service.dart';
 
+import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/data/repos/resend_otp_repo.dart';
 import '../../features/auth/data/repos/sign_up_repo.dart';
 import '../../features/auth/data/repos/verify_email_repo.dart';
 import '../../features/auth/data/services/auth_service.dart';
-import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/ui/cubits/login_cubit/login_cubit.dart';
 import '../../features/auth/ui/cubits/resend_otp_cubit/resend_otp_cubit.dart';
 import '../../features/auth/ui/cubits/sign_up_cubit/sign_up_cubit.dart';
 import '../../features/auth/ui/cubits/verify_email_cubit/verify_email_cubit.dart';
 import '../../features/home/data/repos/categories_repo.dart';
 import '../../features/home/data/repos/products_repo.dart';
+import '../../features/home/data/services/home_service.dart';
 import '../../features/home/ui/cubits/categories_cubit/categories_cubit.dart';
 import '../../features/home/ui/cubits/products_cubit/products_cubit.dart';
 import '../apis/dio_factory.dart';

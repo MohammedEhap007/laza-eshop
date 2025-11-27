@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../../core/themes/app_assets.dart';
 import '../../../../data/models/drawer_item_model.dart';
-
 import 'drawer_item.dart';
 
 class DrawerItemsListView extends StatelessWidget {

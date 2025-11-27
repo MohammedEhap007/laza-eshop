@@ -1,5 +1,7 @@
 import '../../../../core/apis/api_error_handler.dart';
 import '../../../../core/apis/api_result.dart';
+import '../../../../core/helpers/cache_helper.dart';
+import '../../../../core/helpers/cache_helper_keys.dart';
 import '../../../../core/utils/app_logger.dart';
 import '../models/sign_up_request_body.dart';
 import '../models/sign_up_response.dart';
@@ -14,6 +16,10 @@ class SignUpRepo {
   ) async {
     try {
       final response = await _authService.signUp(signUpRequestBody);
+      await CacheHelper.setData(
+        key: CacheHelperKeys.userName,
+        value: '${signUpRequestBody.firstName} ${signUpRequestBody.lastName}',
+      );
       AppLogger.success('SignUp Repo Succeeded To Handle The Response');
       return ApiResult.success(response);
     } catch (error) {

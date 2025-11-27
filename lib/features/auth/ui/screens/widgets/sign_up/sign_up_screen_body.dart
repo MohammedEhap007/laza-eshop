@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/widgets/custom_app_bar.dart';
-import '../../../../../core/widgets/custom_blur_text.dart';
-import '../../../../../core/widgets/custom_text_button.dart';
-import '../../cubits/sign_up_cubit/sign_up_cubit.dart';
-import '../../cubits/sign_up_cubit/sign_up_state.dart';
+import '../../../../../../core/helpers/spacing.dart';
+import '../../../../../../core/widgets/custom_app_bar.dart';
+import '../../../../../../core/widgets/custom_blur_text.dart';
+import '../../../../../../core/widgets/custom_text_button.dart';
+import '../../../cubits/sign_up_cubit/sign_up_cubit.dart';
+import '../../../cubits/sign_up_cubit/sign_up_state.dart';
 import 'sign_up_bloc_listener.dart';
 import 'sign_up_form.dart';
 import 'terms_and_conditions_text.dart';

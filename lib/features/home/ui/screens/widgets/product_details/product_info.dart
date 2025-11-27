@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/product_details/product_description.dart';
 
 import '../../../../../../core/helpers/spacing.dart';
 import '../../../../../../core/themes/app_text_styles.dart';
 import '../../../../../../core/widgets/custom_text_button.dart';
 import '../../../../data/models/products_item_model.dart';
 import 'info_chip.dart';
+import 'product_description.dart';
 
 class ProductInfo extends StatelessWidget {
   const ProductInfo({

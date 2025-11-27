@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/verification_code_screen_body.dart';
+import 'widgets/verification_code/verification_code_screen_body.dart';
 
 class VerificationCodeScreen extends StatelessWidget {
   final String email;

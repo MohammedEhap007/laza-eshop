@@ -1,8 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../../core/apis/api_error_model.dart';
-import '../../../../../core/apis/api_result.dart';
 
+import '../../../../../core/apis/api_result.dart';
 import '../../../data/models/verify_email_request_body.dart';
 import '../../../data/models/verify_email_response.dart';
 import '../../../data/repos/verify_email_repo.dart';

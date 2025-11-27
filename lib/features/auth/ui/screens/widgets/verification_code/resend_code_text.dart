@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../../../../core/themes/app_colors.dart';
-import '../../../../../core/themes/app_text_styles.dart';
+import '../../../../../../core/themes/app_colors.dart';
+import '../../../../../../core/themes/app_text_styles.dart';
 
 class ResendCodeText extends StatefulWidget {
   final VoidCallback onResend;
@@ -12,7 +12,7 @@ class ResendCodeText extends StatefulWidget {
   const ResendCodeText({
     super.key,
     required this.onResend,
-    this.countdownSeconds = 60,
+    this.countdownSeconds = 30,
   });
 
   @override

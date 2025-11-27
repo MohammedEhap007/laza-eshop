@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:laza_eshop/features/home/data/models/products_item_model.dart';
-import 'package:laza_eshop/features/home/ui/screens/widgets/products/product_item.dart';
+import '../../features/home/data/models/products_item_model.dart';
+import '../../features/home/ui/screens/widgets/products/product_item.dart';
 import '../../features/auth/ui/cubits/sign_up_cubit/sign_up_cubit.dart';
 
 import '../../features/auth/ui/cubits/login_cubit/login_cubit.dart';

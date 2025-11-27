@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/helpers/spacing.dart';
+import '../../../../../../core/helpers/spacing.dart';
 import 'validation_row.dart';
 
 class PasswordValidations extends StatelessWidget {

@@ -1,56 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/helpers/spacing.dart';
-import '../../../../../core/utils/app_regex.dart';
-import '../../../../../core/widgets/custom_text_form_field.dart';
-import 'password_validations_text.dart';
+import '../../../../../../core/helpers/spacing.dart';
+import '../../../../../../core/utils/app_regex.dart';
+import '../../../../../../core/widgets/custom_text_form_field.dart';
 
-class SignUpForm extends StatefulWidget {
-  const SignUpForm({
+class LoginForm extends StatefulWidget {
+  const LoginForm({
     super.key,
     required this.formKey,
-    required this.usernameController,
     required this.emailController,
     required this.passwordController,
   });
-
   final GlobalKey<FormState> formKey;
-  final TextEditingController usernameController;
   final TextEditingController emailController;
   final TextEditingController passwordController;
 
   @override
-  State<SignUpForm> createState() => _SignUpFormState();
+  State<LoginForm> createState() => _LoginFormState();
 }
 
-class _SignUpFormState extends State<SignUpForm> {
+class _LoginFormState extends State<LoginForm> {
   bool isObscureText = true;
-  bool hasLowercase = false;
-  bool hasUppercase = false;
-  bool hasSpecialCharacters = false;
-  bool hasNumber = false;
-  bool hasMinLength = false;
-
-  @override
-  void initState() {
-    setupPasswordValidationListener();
-    super.initState();
-  }
-
-  void setupPasswordValidationListener() {
-    widget.passwordController.addListener(() {
-      setState(() {
-        hasLowercase = AppRegex.hasLowerCase(widget.passwordController.text);
-        hasUppercase = AppRegex.hasUpperCase(widget.passwordController.text);
-        hasSpecialCharacters = AppRegex.hasSpecialCharacter(
-          widget.passwordController.text,
-        );
-        hasNumber = AppRegex.hasNumber(widget.passwordController.text);
-        hasMinLength = AppRegex.hasMinLength(widget.passwordController.text);
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,18 +29,6 @@ class _SignUpFormState extends State<SignUpForm> {
       key: widget.formKey,
       child: Column(
         children: [
-          CustomTextFormField(
-            labelText: 'Username',
-            textInputAction: TextInputAction.next,
-            controller: widget.usernameController,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter a username';
-              }
-              return null;
-            },
-          ),
-          verticalSpace(20),
           CustomTextFormField(
             labelText: 'Email Address',
             keyboardType: TextInputType.emailAddress,
@@ -111,14 +70,6 @@ class _SignUpFormState extends State<SignUpForm> {
               }
               return null;
             },
-          ),
-          verticalSpace(20),
-          PasswordValidations(
-            hasLowerCase: hasLowercase,
-            hasUpperCase: hasUppercase,
-            hasSpecialCharacters: hasSpecialCharacters,
-            hasNumber: hasNumber,
-            hasMinLength: hasMinLength,
           ),
         ],
       ),

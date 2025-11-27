@@ -4,7 +4,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/app_extensions.dart';
-
 import 'api_error_model.dart';
 
 class ApiErrorHandler {

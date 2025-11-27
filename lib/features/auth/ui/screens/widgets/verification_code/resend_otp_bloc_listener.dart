@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/widgets/custom_app_error_dialog.dart';
-import '../../../../../core/widgets/custom_app_success_dialog.dart';
-import '../../cubits/resend_otp_cubit/resend_otp_cubit.dart';
-import '../../cubits/resend_otp_cubit/resend_otp_state.dart';
+import '../../../../../../core/widgets/custom_app_error_dialog.dart';
+import '../../../../../../core/widgets/custom_app_success_dialog.dart';
+import '../../../cubits/resend_otp_cubit/resend_otp_cubit.dart';
+import '../../../cubits/resend_otp_cubit/resend_otp_state.dart';
 
 class ResendOtpBlocListener extends StatelessWidget {
   const ResendOtpBlocListener({super.key});

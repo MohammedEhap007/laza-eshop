@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../../../core/utils/app_extensions.dart';
 
+import '../../../../../../core/helpers/cache_helper.dart';
+import '../../../../../../core/helpers/cache_helper_keys.dart';
 import '../../../../../../core/helpers/spacing.dart';
 import '../../../../../../core/themes/app_assets.dart';
 import '../../../../../../core/themes/app_colors.dart';
 import '../../../../../../core/themes/app_text_styles.dart';
+import '../../../../../../core/utils/app_extensions.dart';
 
 class DrawerUserInfo extends StatelessWidget {
   const DrawerUserInfo({
@@ -27,7 +29,7 @@ class DrawerUserInfo extends StatelessWidget {
         ),
       ),
       title: Text(
-        'Username',
+        CacheHelper.getString(key: CacheHelperKeys.userName) ?? 'User Name',
         style: AppTextStyles.font16Medium,
       ),
       subtitle: Row(
