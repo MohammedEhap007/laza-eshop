@@ -6,9 +6,7 @@ A modern, feature-rich e-commerce mobile application built with **Flutter**. Thi
 
 ![App Preview](assets/preview.gif)
 
-https://github.com/user-attachments/assets/94f0cf22-077d-40e2-a3c1-f1a04efa9755
-
-
+<https://github.com/user-attachments/assets/94f0cf22-077d-40e2-a3c1-f1a04efa9755>
 
 ## ✨ Features
 
@@ -18,6 +16,7 @@ https://github.com/user-attachments/assets/94f0cf22-077d-40e2-a3c1-f1a04efa9755
 - 📦 **Product Details**: View detailed product information, including high-quality images, descriptions, price, stock status, weight, and applicable discounts.
 - 📱 **Responsive Design**: Fully optimized for various screen sizes and pixel densities using `flutter_screenutil`.
 - 🔍 **Search**: Find products quickly with an efficient search functionality.
+- 📄 **Infinite Scroll Pagination**: Seamlessly load more products as you scroll with intelligent pagination that automatically fetches the next page when you're near the bottom.
 - 🦴 **Skeleton Loading**: Smooth loading states using `skeletonizer` for a better user experience.
 
 ## 🚧 In Development
