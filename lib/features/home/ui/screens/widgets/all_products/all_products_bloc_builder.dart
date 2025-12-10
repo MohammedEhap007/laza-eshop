@@ -4,11 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../core/widgets/vertical_failure_feedback_widget.dart';
 import '../../../cubits/products_cubit/products_cubit.dart';
 import '../../../cubits/products_cubit/products_state.dart';
-import 'products_grid_view.dart';
-import 'products_shimmer.dart';
+import '../products/products_grid_view.dart';
+import '../products/products_shimmer.dart';
 
-class ProductsBlocBuilder extends StatelessWidget {
-  const ProductsBlocBuilder({super.key});
+class AllProductsBlocBuilder extends StatelessWidget {
+  const AllProductsBlocBuilder({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +22,9 @@ class ProductsBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           productsLoading: () => const ProductsShimmer(),
-          productsSuccess: (productsResponse) =>
-              ProductsGridView(productsResponse: productsResponse),
+          productsSuccess: (productsResponse) => ProductsGridView(
+            productsResponse: productsResponse,
+          ),
           productsFailure: (apiErrorModel) => SliverToBoxAdapter(
             child: VerticalFailureFeedbackWidget(
               apiErrorModel: apiErrorModel,

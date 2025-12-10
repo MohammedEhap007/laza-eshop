@@ -15,7 +15,7 @@ class ProductsGridViewItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(
+        Flexible(
           child: ProductItem(productsItemModel: productsItemModel),
         ),
         verticalSpace(5),

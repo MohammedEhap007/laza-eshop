@@ -1,5 +1,3 @@
-
-
 class DrawerItemModel {
   final String title;
   final String icon;
